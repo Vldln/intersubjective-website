@@ -1,19 +1,19 @@
 export default defineNuxtConfig({
   modules: [
-    '@vueuse/nuxt',
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@nuxtjs/seo',
-    '@nuxt/content',
-    '@nuxt/image',
-    '@nuxt/scripts',
+    "@vueuse/nuxt",
+    "@nuxt/ui",
+    "@nuxtjs/i18n",
+    "@nuxtjs/seo",
+    "@nuxt/content",
+    "@nuxt/image",
+    "@nuxt/scripts",
   ],
 
   imports: {
     presets: [
       {
-        from: 'vue-sonner',
-        imports: ['toast'],
+        from: "vue-sonner",
+        imports: ["toast"],
       },
     ],
   },
@@ -22,17 +22,17 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-  css: ['~/assets/style/main.css'],
+  css: ["~/assets/style/main.css"],
 
   site: {
-    url: 'https://canvas.hrcd.fr',
-    defaultLocale: 'en',
+    url: "https://canvas.hrcd.fr",
+    defaultLocale: "en",
     indexable: true,
   },
 
   colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
+    preference: "dark",
+    fallback: "dark",
   },
 
   content: {
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
       anchorLinks: false,
     },
     preview: {
-      api: 'https://api.nuxt.studio',
+      api: "https://api.nuxt.studio",
       dev: true,
     },
   },
@@ -48,9 +48,9 @@ export default defineNuxtConfig({
   mdc: {
     highlight: {
       theme: {
-        dark: 'github-dark',
-        default: 'github-dark',
-        light: 'github-light',
+        dark: "github-dark",
+        default: "github-dark",
+        light: "github-light",
       },
     },
   },
@@ -63,7 +63,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     // Needed to activate preview on Nuxt Studio
-    '/': { prerender: false },
+    "/": { prerender: false },
   },
 
   future: {
@@ -74,7 +74,7 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
 
-  compatibilityDate: '2025-01-05',
+  compatibilityDate: "2025-01-05",
 
   nitro: {
     experimental: {
@@ -83,52 +83,49 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/en', '/fr'],
+      routes: ["/en", "/fr"],
     },
   },
 
   hooks: {
-    'nitro:config': (config) => {
+    "nitro:config": (config) => {
       if (process.env.NUXT_PRIVATE_RESEND_API_KEY) {
         config.handlers?.push({
-          method: 'post',
-          route: '/api/emails/send',
-          handler: '~~/server/emails/send.ts',
-        })
+          method: "post",
+          route: "/api/emails/send",
+          handler: "~~/server/emails/send.ts",
+        });
       }
     },
   },
 
   i18n: {
-    locales: [
-      { code: 'en', name: 'English', language: 'en-US' },
-      { code: 'fr', name: 'French', language: 'fr-FR' },
-    ],
+    locales: [{ code: "en", name: "English", language: "en-US" }],
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
     },
-    strategy: 'prefix',
-    defaultLocale: 'en',
-    vueI18n: '~/i18n.config.ts',
+    strategy: "prefix_except_default",
+    defaultLocale: "en",
+    vueI18n: "~/i18n.config.ts",
   },
 
   icon: {
     customCollections: [
       {
-        prefix: 'custom',
-        dir: './app/assets/icons',
+        prefix: "custom",
+        dir: "./app/assets/icons",
       },
     ],
     clientBundle: {
       scan: true,
       includeCustomCollections: true,
     },
-    provider: 'iconify',
+    provider: "iconify",
   },
 
   ogImage: {
     zeroRuntime: true,
   },
-})
+});
