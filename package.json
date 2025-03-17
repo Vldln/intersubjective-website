@@ -1,8 +1,8 @@
 {
-  "name": "canvas-template",
-  "author": "HugoRCD",
+  "name": "Intersubjective website",
+  "author": "Vldln",
   "private": true,
-  "license": "Apache-2.0",
+  "license": "MIT",
   "scripts": {
     "automd": "automd",
     "build": "nuxt build",
