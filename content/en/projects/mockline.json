@@ -3,5 +3,6 @@
   "image": "/projects/mockline.webp",
   "link": "https://mockline.dev/",
   "release": "Soon",
-  "featured": true
+  "featured": true,
+  "status": "active"
 }

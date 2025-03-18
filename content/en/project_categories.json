@@ -1,0 +1,13 @@
+{
+  "title": "Projects",
+  "projectCategories": [
+    {
+      "title": "Active",
+      "type": "active"
+    },
+    {
+      "title": "Past",
+      "type": "past"
+    }
+  ]
+}

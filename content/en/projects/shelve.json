@@ -3,5 +3,6 @@
   "image": "/projects/shelve.webp",
   "link": "https://shelve.cloud/",
   "release": "2024",
-  "featured": true
+  "featured": true,
+  "status": "past"
 }
