@@ -1,0 +1,13 @@
+{
+  "title": "Team",
+  "teamCategories": [
+    {
+      "title": "Present",
+      "type": "present"
+    },
+    {
+      "title": "Past",
+      "type": "past"
+    }
+  ]
+}

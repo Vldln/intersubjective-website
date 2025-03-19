@@ -26,6 +26,14 @@ const commonProjectSchema = z.object({
   status: z.string().nonempty(),
 });
 
+const commonTeamSchema = z.object({
+  name: z.string().nonempty(),
+  image: z.string().url(),
+  link: z.string().url(),
+  position: z.string().nonempty(),
+  status: z.string().nonempty(),
+});
+
 const commonFaqSchema = z.object({
   title: z.string().nonempty(),
   subtitle: z.string().nonempty(),
@@ -112,6 +120,19 @@ export const collections = {
       ),
     }),
   }),
+  team_categories_en: defineCollection({
+    type: "data",
+    source: "en/team_categories.json",
+    schema: z.object({
+      title: z.string().nonempty(),
+      teamCategories: z.array(
+        z.object({
+          title: z.string().nonempty(),
+          type: z.string().nonempty(),
+        })
+      ),
+    }),
+  }),
   stack: defineCollection({
     type: "data",
     source: "stack.json",
@@ -135,4 +156,15 @@ export const collections = {
     source: "fr/faq.json",
     schema: commonFaqSchema,
   }),
+  team_en: defineCollection({
+    type: "data",
+    source: "en/team/*.json",
+    schema: commonTeamSchema,
+  }),
+  team_fr: defineCollection({
+    type: "data",
+    source: "fr/team/*.json",
+    schema: commonTeamSchema,
+  }),
+  
 };

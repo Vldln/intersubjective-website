@@ -54,6 +54,8 @@
         <HomeFaq style="--stagger: 6" data-animate />
 
         <HomeProjectNew style="--stagger: 6" data-animate />
+
+        <HomeTeam style="--stagger: 6" data-animate />
       </div>
     </div>
   </section>
