@@ -2,24 +2,16 @@
 import * as z from "zod";
 import type { FormSubmitEvent } from "#ui/types";
 
-const { profile } = useAppConfig();
 const { t } = useI18n();
 
 const isResendEnabled = useRuntimeConfig().public.resend;
 
 const state = ref({
   email: "",
-  message: "",
-  phone: "",
-  fullname: "",
-  subject: "",
 });
 
 const schema = z.object({
   email: z.string().email("Invalid email"),
-  message: z.string().min(10, "Message is too short"),
-  subject: z.string().min(5, "Subject is too short"),
-  fullname: z.string().min(3, "Name is too short"),
 });
 type Schema = z.output<typeof schema>;
 
@@ -34,14 +26,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     });
     state.value = {
       email: "",
-      message: "",
-      phone: "",
-      fullname: "",
-      subject: "",
     };
-    toast.success(t("contact.success"));
+    toast.success(t("global.subscribe.success"));
   } catch {
-    toast.error(t("contact.error"));
+    toast.error(t("global.subscribe.error"));
   }
   loading.value = false;
 }
@@ -55,7 +43,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     <h2 class="text-center text-lg font-extralight italic text-muted">
       <slot name="subtitle" mdc-unwrap="p" />
     </h2>
-    <Divider class="mb-8 mt-2" />
     <div class="flex flex-col sm:items-center sm:justify-between">
       <UForm
         :state
@@ -63,36 +50,21 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         class="flex w-full max-w-[40rem] flex-col gap-3"
         @submit="onSubmit"
       >
-        <UFormField label="Email" name="email" required>
+        <UFormField name="email" required>
           <UInput
             v-model="state.email"
             autocomplete="email"
             class="w-full"
-            placeholder="john.doe@gmail.com"
-          />
-        </UFormField>
-
-        <UFormField label="Subject" name="subject" required>
-          <UInput
-            v-model="state.subject"
-            class="w-full"
-            :placeholder="$t('contact.subject')"
-          />
-        </UFormField>
-
-        <UFormField label="Message" name="message" required>
-          <UTextarea
-            v-model="state.message"
-            autoresize
-            class="w-full"
-            :rows="4"
-            placeholder="Lets work together!"
+            :placeholder="$t('global.subscribe.placeholder')"
           />
         </UFormField>
         <div class="flex justify-center">
-          <UTooltip :disabled="isResendEnabled" :text="$t('contact.disabled')">
+          <UTooltip
+            :disabled="isResendEnabled"
+            :text="$t('global.subscribe.disabled')"
+          >
             <UButton :loading :disabled="!isResendEnabled" type="submit" block>
-              {{ $t("contact.submit") }}
+              {{ $t("global.subscribe.label") }}
             </UButton>
           </UTooltip>
         </div>

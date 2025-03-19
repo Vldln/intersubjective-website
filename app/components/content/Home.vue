@@ -37,6 +37,7 @@
         <!-- social -->
         <!-- <HomeSocial style="--stagger: 3" data-animate /> -->
 
+        <HomeSubscribe style="--stagger: 3" data-animate />
         <Divider class="my-9" />
 
         <HomeProject style="--stagger: 6" data-animate />
