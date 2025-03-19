@@ -69,7 +69,7 @@ const ui = {
     <UTabs :items orientation="horizontal" :ui>
       <template #content="{ item }">
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <TeamCard v-for="team in item.teams" :key="team.name" :team="team" />
+          <TeamCard v-for="team in item.teams" :key="team.title" :team="team" />
         </div>
       </template>
     </UTabs>

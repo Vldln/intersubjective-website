@@ -74,7 +74,7 @@ const ui = {
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <ProjectCard
             v-for="project in item.projects"
-            :key="project.name"
+            :key="project.title"
             :project="project"
           />
         </div>

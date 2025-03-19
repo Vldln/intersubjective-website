@@ -17,7 +17,7 @@ const commonArticleSchema = z.object({
 });
 
 const commonProjectSchema = z.object({
-  name: z.string().nonempty(),
+  title: z.string().nonempty(),
   image: z.string().url(),
   link: z.string().url(),
   release: z.string().nonempty(),
@@ -27,7 +27,7 @@ const commonProjectSchema = z.object({
 });
 
 const commonTeamSchema = z.object({
-  name: z.string().nonempty(),
+  title: z.string().nonempty(),
   image: z.string().url(),
   link: z.string().url(),
   position: z.string().nonempty(),
@@ -95,15 +95,11 @@ export const collections = {
   ),
   projects_en: defineCollection(
     asSeoCollection({
-      type: "data",
-      source: "en/projects/*.json",
-      schema: commonProjectSchema,
-    })
-  ),
-  projects_fr: defineCollection(
-    asSeoCollection({
-      type: "data",
-      source: "fr/projects/*.json",
+      type: "page",
+      source: {
+        include: "en/projects/*.md",
+        prefix: "/en/projects",
+      },
       schema: commonProjectSchema,
     })
   ),
@@ -151,20 +147,14 @@ export const collections = {
     source: "en/faq.json",
     schema: commonFaqSchema,
   }),
-  faq_fr: defineCollection({
-    type: "data",
-    source: "fr/faq.json",
-    schema: commonFaqSchema,
-  }),
-  team_en: defineCollection({
-    type: "data",
-    source: "en/team/*.json",
-    schema: commonTeamSchema,
-  }),
-  team_fr: defineCollection({
-    type: "data",
-    source: "fr/team/*.json",
-    schema: commonTeamSchema,
-  }),
-  
+  team_en: defineCollection(
+    asSeoCollection({
+      type: "page",
+      source: {
+        include: "en/team/*.md",
+        prefix: "/en/team",
+      },
+      schema: commonTeamSchema,
+    })
+  ),
 };

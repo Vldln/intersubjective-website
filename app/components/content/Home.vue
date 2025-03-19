@@ -13,9 +13,6 @@
         class="absolute -top-8 left-1/2 size-72 -translate-x-1/2 rounded-full bg-white/25 blur-[120px] lg:-top-8 lg:size-[32rem] lg:blur-[200px]"
       />
 
-      <!-- profile picture -->
-      <HomeProfilePicture />
-
       <div class="z-20 flex flex-col items-center justify-center">
         <!-- title -->
         <div
@@ -38,22 +35,11 @@
         </div>
 
         <!-- social -->
-        <HomeSocial style="--stagger: 3" data-animate />
-
-        <div
-          style="--stagger: 5"
-          data-animate
-          class="mt-12 flex w-full max-w-3xl flex-col gap-4 lg:mt-16"
-        >
-          <!-- projects -->
-          <HomeProjects />
-        </div>
+        <!-- <HomeSocial style="--stagger: 3" data-animate /> -->
 
         <Divider class="my-9" />
 
-        <HomeFaq style="--stagger: 6" data-animate />
-
-        <HomeProjectNew style="--stagger: 6" data-animate />
+        <HomeProject style="--stagger: 6" data-animate />
 
         <HomeTeam style="--stagger: 6" data-animate />
       </div>

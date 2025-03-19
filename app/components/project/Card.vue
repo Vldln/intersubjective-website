@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   project: {
-    name: string;
+    title: string;
     release: string;
     image: string;
     link: string;
@@ -12,19 +12,18 @@ const img = useImage();
 
 <template>
   <NuxtLink
-    :aria-label="project.name + ' project link'"
+    :aria-label="project.title + ' project link'"
     :to="project.link"
-    target="_blank"
     class="group relative flex cursor-pointer flex-col gap-1 rounded-lg border border-white/10 bg-zinc-900/80 p-1 shadow-2xl shadow-zinc-950/50 backdrop-blur-sm"
   >
     <div class="flex h-56 justify-center overflow-hidden rounded-lg">
       <NuxtImg
         :placeholder="img(`${project.image}`)"
         width="1536"
-        :alt="project.name + ' project image'"
+        :alt="project.title + ' project image'"
         class="h-full rounded-lg object-cover transition-all duration-300 hover:scale-105"
         :src="project.image"
-        :aria-label="project.name + ' project image'"
+        :aria-label="project.title + ' project image'"
       />
     </div>
     <div class="absolute bottom-0 flex w-full justify-center">
@@ -37,7 +36,7 @@ const img = useImage();
               <span
                 class="whitespace-nowrap text-sm font-semibold text-white/90"
               >
-                {{ project.name }}
+                {{ project.title }}
               </span>
               <span class="whitespace-nowrap text-xs text-neutral-500">
                 {{
