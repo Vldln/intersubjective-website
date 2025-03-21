@@ -2,7 +2,7 @@
 defineProps({
   as: {
     type: String,
-    default: 'button',
+    default: "button",
   },
   rounded: {
     type: Boolean,
@@ -16,15 +16,15 @@ defineProps({
     type: Boolean,
     default: false,
   },
-})
+});
 </script>
 
 <template>
   <component
     :is="as"
-    :class="`group relative inline-flex items-center overflow-hidden transition ${rounded ? 'rounded-full' : 'rounded-md px-8 py-1'} ${
-      transparent ? '' : 'bg-zinc-800'
-    }`"
+    :class="`group relative inline-flex items-center overflow-hidden transition ${
+      rounded ? 'rounded-full' : 'rounded-md px-8 py-1'
+    } ${transparent ? '' : 'bg-zinc-800'}`"
   >
     <div
       v-if="animate"
@@ -37,7 +37,9 @@ defineProps({
 
     <div
       class="absolute inset-0.5 bg-zinc-900 sm:bg-zinc-900/80 sm:backdrop-blur-md"
-      :class="`${transparent ? '' : 'bg-zinc-800'} ${rounded ? 'rounded-full' : 'rounded-md'}`"
+      :class="`${transparent ? '' : 'bg-zinc-800'} ${
+        rounded ? 'rounded-full' : 'rounded-md'
+      }`"
     />
 
     <div

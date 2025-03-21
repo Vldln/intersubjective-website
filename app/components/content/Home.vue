@@ -1,39 +1,35 @@
 <template>
-  <section class="relative pt-12">
-    <!-- grid -->
+  <section class="relative">
     <div
-      class="pointer-events-none absolute inset-0 bg-center bg-grid-white/10 bg-grid-16 [mask-image:radial-gradient(white,transparent_85%)]"
-    />
+      class="font-geist bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat h-screen flex flex-col items-center justify-center"
+      style="
+        background-image: linear-gradient(
+            rgba(10, 10, 10, 0.2),
+            rgba(10, 10, 10, 1)
+          ),
+          url('/hero.webp');
+        --stagger: 1;
+        --delay: 10ms;
+      "
+      data-animate
+    >
+      <h1
+        class="mx-auto font-bold text-center text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
+      >
+        <slot name="hero_title" mdc-unwrap="p" />
+      </h1>
 
+      <!-- subtitle -->
+      <h2
+        class="mx-auto mt-4 max-w-4xl text-center text-4xl antialiased text-white/90"
+      >
+        <slot name="hero_subtitle" mdc-unwrap="p" />
+      </h2>
+    </div>
     <div
       class="relative mx-auto flex max-w-7xl flex-col justify-center gap-4 px-4 py-8 sm:px-6 lg:px-8 lg:py-16"
     >
-      <!-- spotlight -->
-      <div
-        class="absolute -top-8 left-1/2 size-72 -translate-x-1/2 rounded-full bg-white/25 blur-[120px] lg:-top-8 lg:size-[32rem] lg:blur-[200px]"
-      />
-
       <div class="z-20 flex flex-col items-center justify-center">
-        <!-- title -->
-        <div
-          class="font-geist"
-          style="--stagger: 1; --delay: 10ms"
-          data-animate
-        >
-          <h1
-            class="mx-auto font-medium text-center text-pretty bg-gradient-to-b from-white/90 to-white/30 bg-clip-text text-3xl text-transparent lg:max-w-3xl lg:text-4xl"
-          >
-            <slot name="hero_title" mdc-unwrap="p" />
-          </h1>
-
-          <!-- subtitle -->
-          <h2
-            class="mx-auto mt-4 max-w-xl text-center text-lg antialiased text-white/60"
-          >
-            <slot name="hero_subtitle" mdc-unwrap="p" />
-          </h2>
-        </div>
-
         <!-- social -->
         <!-- <HomeSocial style="--stagger: 3" data-animate /> -->
 

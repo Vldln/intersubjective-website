@@ -14,9 +14,8 @@ const localePath = useLocalePath();
 
 <template>
   <div class="mx-auto my-2 flex w-full items-center justify-center">
-    <header class="rounded-full">
+    <header class="rounded-lg">
       <SpotlightButton
-        rounded
         transparent
         :animate="false"
         class="border border-white/10"
@@ -31,11 +30,11 @@ const localePath = useLocalePath();
             :aria-label="item.name + ' navigation link'"
             :class="[
               localePath(item.to) === route.path
-                ? 'border border-white/5 bg-zinc-900/10 text-white/75 shadow-2xl shadow-white/50 backdrop-blur-3xl text-shadow-sm'
+                ? 'text-white/75 shadow-2xl text-shadow-sm'
                 : 'text-muted',
             ]"
             :to="localePath(item.to)"
-            class="flex items-center rounded-full border border-transparent px-4 py-1 transition-all duration-300 ease-in-out hover:border-white/5 hover:bg-zinc-900/50 hover:backdrop-blur-3xl sm:px-6"
+            class="flex items-center rounded-lg border border-transparent px-4 py-1 transition-all duration-300 ease-in-out sm:px-6 hover:text-white/75"
           >
             <UIcon :name="item.icon" class="size-7 font-light sm:size-6" />
           </NuxtLink>
