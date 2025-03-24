@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  team: {
+  item: {
     title: string;
     image: string;
     link: string;
@@ -13,23 +13,23 @@ const img = useImage();
 
 <template>
   <NuxtLink
-    :aria-label="team.title + ' team member link'"
-    :to="team.link"
+    :aria-label="item.title + ' team member link'"
+    :to="item.link"
     class="group cursor-pointer"
   >
     <NuxtImg
-      :placeholder="img(`${team.image}`)"
+      :placeholder="img(`${item.image}`)"
       width="1536"
-      :alt="team.title + ' team member image'"
-      class="h-40 w-40 aspect-square rounded-full object-cover transition-all duration-300 hover:scale-105 mx-auto mb-4"
-      :src="team.image"
-      :aria-label="team.title + ' team member image'"
+      :alt="item.title + ' team member image'"
+      class="h-40 w-40 aspect-square rounded-full object-cover transition-all duration-300 hover:scale-105 mx-auto mb-4 border-4 border-white/10 border"
+      :src="item.image"
+      :aria-label="item.title + ' team member image'"
     />
     <div class="text-center font-bold text-lg mb-2">
-      {{ team.title }}
+      {{ item.title }}
     </div>
     <div class="text-center">
-      {{ team.position }}
+      {{ item.position }}
     </div>
   </NuxtLink>
 </template>

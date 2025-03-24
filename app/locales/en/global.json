@@ -1,5 +1,5 @@
 {
-  "app_description": "Canvas is a simple but beautiful portfolio template for designers and developers built with Nuxt and Tailwind CSS. Made with ❤\uFE0F by HugoRCD",
+  "app_description": "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
   "copied_to_clipboard": "Copied to clipboard",
   "article_link_copied": "Article link copied to clipboard",
   "email_copied": "Email copied to clipboard",
@@ -20,10 +20,11 @@
   "unavailable": "Currently working on other awesome projects",
   "all_rights_reserved": "All rights reserved",
   "subscribe": {
-    "label": "Subscribe to updates",
-    "placeholder": "john.doe@gmail.com",
+    "label": "Subscribe to our updates",
+    "placeholder": "john.doe{'@'}gmail.com",
     "disabled": "You must set your resend API key",
     "success": "You have been subscribed successfully",
-    "error": "Oups, an error occurred while subscribing"
+    "error": "Oups, an error occurred while subscribing",
+    "button": "Subscribe"
   }
 }

@@ -36,20 +36,15 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <section class="mx-auto mt-4 flex max-w-4xl flex-col p-7 sm:mt-20">
-    <h1 class="font-newsreader italic text-white-shadow text-center text-4xl">
+  <section class="mx-auto mt-4 flex max-w-8xl flex-col">
+    <h2 class="text-white-shadow text-center text-xl mb-4">
       <slot name="title" mdc-unwrap="p" />
-    </h1>
-    <h2 class="text-center text-lg font-extralight italic text-muted">
-      <slot name="subtitle" mdc-unwrap="p" />
     </h2>
+    <h3 class="text-center text-lg font-extralight italic text-muted">
+      <slot name="subtitle" mdc-unwrap="p" />
+    </h3>
     <div class="flex flex-col sm:items-center sm:justify-between">
-      <UForm
-        :state
-        :schema
-        class="flex w-full max-w-[40rem] flex-col gap-3"
-        @submit="onSubmit"
-      >
+      <UForm :state :schema class="flex w-full gap-3" @submit="onSubmit">
         <UFormField name="email" required>
           <UInput
             v-model="state.email"
@@ -64,7 +59,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             :text="$t('global.subscribe.disabled')"
           >
             <UButton :loading :disabled="!isResendEnabled" type="submit" block>
-              {{ $t("global.subscribe.label") }}
+              {{ $t("global.subscribe.button") }}
             </UButton>
           </UTooltip>
         </div>
