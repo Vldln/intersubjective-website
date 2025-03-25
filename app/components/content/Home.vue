@@ -13,19 +13,21 @@
       "
       data-animate
     >
-      <Logo size="14" class="mx-auto" />
-      <div class="mx-auto lg:max-w-3xl">
+      <Logo size="14" class="mx-auto mb-8" />
+      <div
+        class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center sm:items-start"
+      >
         <h1
-          class="mx-auto mb-8 flex gap-3 font-bold text-center text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
+          class="mx-auto mb-4 sm:mb-8 flex gap-3 text-center sm:text-left font-bold text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
         >
           <slot name="hero_title" mdc-unwrap="p" />
         </h1>
-        <h2 class="text-white-shadow font-bold text-xl mb-4">
+        <h2
+          class="text-white-shadow text-center sm:text-left text-base max-w-[300px] sm:max-w-none sm:text-xl mb-4"
+        >
           <slot name="hero_about_title" mdc-unwrap="p" />
         </h2>
-        <h3 class="text-lg font-extralight">
-          <slot name="hero_about_subtitle" mdc-unwrap="p" />
-        </h3>
+
         <ULink
           class="w-fit rounded-md mt-4 text-xl bg-purple-900/30 text-white/90 hover:bg-purple-900/90 px-4 border-2 border-purple-900 py-2 flex group"
           to="/about"

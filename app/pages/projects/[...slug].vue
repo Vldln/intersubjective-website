@@ -36,7 +36,7 @@ const img = useImage();
 </script>
 
 <template>
-  <div v-if="page" class="mt-20">
+  <div v-if="page" class="sm:mt-20">
     <FolioMeta :page :is-project="route.path.includes('/projects/')" />
     <NuxtLinkLocale
       to="/"
@@ -50,15 +50,17 @@ const img = useImage();
     <article
       class="article mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
     >
-      <div class="flex gap-4 mb-8">
+      <div class="flex flex-wrap gap-4 sm:gap-8 mb-8">
         <div
-          class="group relative flex cursor-pointer flex-col gap-1 rounded-lg bg-purple-900/10 p-1"
+          class="group relative flex w-full sm:w-auto flex-col gap-1 rounded-lg bg-purple-900/10 p-1"
         >
-          <div class="flex h-56 justify-center overflow-hidden rounded-lg">
+          <div
+            class="flex h-56 justify-center overflow-hidden rounded-lg w-full"
+          >
             <NuxtImg
               :placeholder="img(`${page.image ?? `project_placeholder.webp`}`)"
               :alt="page.title + ' project image'"
-              class="h-full rounded-lg object-cover"
+              class="h-full w-full rounded-lg object-cover"
               :src="page.image"
               :aria-label="page.title + ' project image'"
             />

@@ -34,11 +34,11 @@ const img = useImage();
 </script>
 
 <template>
-  <div v-if="page" class="mt-20">
+  <div v-if="page" class="sm:mt-20">
     <FolioMeta :page :is-team="route.path.includes('/team/')" />
     <NuxtLinkLocale
       to="/"
-      class="mx-auto my-16 flex cursor-pointer items-center gap-2 px-4 text-muted hover:text-primary transition-colors duration-200 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
+      class="mx-auto my-8 flex cursor-pointer items-center gap-2 px-4 text-muted hover:text-primary transition-colors duration-200 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
     >
       <UIcon name="lucide:arrow-left" class="size-4" />
       <span class="text-sm font-extralight">
@@ -48,7 +48,7 @@ const img = useImage();
     <article
       class="article mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mb-8"
     >
-      <div class="flex gap-8 mb-8">
+      <div class="flex flex-wrap gap-4 sm:gap-8 mb-8">
         <NuxtImg
           :placeholder="img(`${page?.image}`)"
           width="1536"
@@ -61,9 +61,9 @@ const img = useImage();
           <h1 class="text-2xl font-bold normal-case">
             {{ page?.title }}
           </h1>
-          <h3 class="normal-case">
+          <h4>
             {{ page?.position }}
-          </h3>
+          </h4>
         </div>
       </div>
       <Divider class="mb-8 mt-2" />
