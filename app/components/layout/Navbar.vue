@@ -15,7 +15,11 @@ const localePath = useLocalePath();
 <template>
   <div class="mx-auto my-2 flex w-full items-center justify-center">
     <header class="rounded-lg">
-      <SpotlightButton transparent :animate="false">
+      <SpotlightButton
+        transparent
+        :animate="false"
+        class="bg-purple-900/10 dark:bg-purple-900/10"
+      >
         <nav
           class="z-10 flex h-[50px] justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4"
         >

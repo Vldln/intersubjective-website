@@ -4,7 +4,7 @@
       class="font-geist bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat h-screen flex flex-col items-center justify-center"
       style="
         background-image: linear-gradient(
-            rgba(10, 10, 10, 0.2),
+            rgba(10, 10, 10, 0.3),
             rgba(10, 10, 10, 1)
           ),
           url('/hero.webp');
@@ -13,12 +13,13 @@
       "
       data-animate
     >
-      <h1
-        class="mx-auto font-bold text-center text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
-      >
-        <slot name="hero_title" mdc-unwrap="p" />
-      </h1>
-      <div>
+      <Logo size="14" class="mx-auto" />
+      <div class="mx-auto lg:max-w-3xl">
+        <h1
+          class="mx-auto mb-8 flex gap-3 font-bold text-center text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
+        >
+          <slot name="hero_title" mdc-unwrap="p" />
+        </h1>
         <h2 class="text-white-shadow font-bold text-xl mb-4">
           <slot name="hero_about_title" mdc-unwrap="p" />
         </h2>
@@ -26,14 +27,14 @@
           <slot name="hero_about_subtitle" mdc-unwrap="p" />
         </h3>
         <ULink
-          class="w-fit rounded-md mt-4 bg-zinc-200/80 text-zinc-900 hover:bg-zinc-300/70 px-4 py-2 flex group"
+          class="w-fit rounded-md mt-4 text-xl bg-purple-900/30 text-white/90 hover:bg-purple-900/90 px-4 border-2 border-purple-900 py-2 flex group"
           to="/about"
         >
           <slot name="hero_button" mdc-unwrap="p" />
           <div
-            class="flex ml-2 items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-zinc-900"
+            class="flex text-xl ml-2 items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-purple-900"
           >
-            <UIcon name="heroicons:arrow-right" class="size-3 text-zinc-900" />
+            <UIcon name="heroicons:arrow-right" class="size-4 text-white/90" />
           </div>
         </ULink>
       </div>
@@ -50,6 +51,7 @@
         >
           <slot name="hero_subtitle" mdc-unwrap="p" />
         </h2>
+        <Divider class="my-9" />
         <HomeSubscribe style="--stagger: 3" data-animate>
           <template #title>
             {{ $t("global.subscribe.label") }}

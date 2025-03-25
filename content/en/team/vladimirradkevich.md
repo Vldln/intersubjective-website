@@ -1,0 +1,22 @@
+---
+title: "Vladimir Radkevich"
+image: "/team/vladimirradkevich.webp"
+link: "/team/vladimirradkevich"
+position: "Development Project Manager"
+status: "present"
+---
+
+![preview](/team/vladimirradkevich.webp)
+
+With over a decade of experience in studying cryptography and blockchain architecture, I have developed unique protocols for identification and access management, reflecting my deep expertise in this field. My experience in automating government administration and digital justice, as well as in designing decision-making systems within communities, allows me to make a significant contribution to the development of crypto projects, combining innovations in social technologies with transparency and efficiency. All this I do with the aim of creating a more equitable society, where collective methods of self-organization and decision-making prevail.
+
+Education:
+Graduated from the National Research Nuclear University "MEPhI", Moscow, specializing in Artificial Intelligence.
+
+Professional Experience:
+- Current Position: Project Manager at European Legal Service, focusing on the application of neural networks in legal and medical practices, website development, and full-cycle automated solutions.
+- Career Span: Over 15 years of diverse experience in project management, automation, and neural network application.
+
+Personal Skills:
+- Demonstrates strong capabilities in leading comprehensive projects and implementing innovative technologies.
+- Proven expertise in managing complex tasks, from concept to execution, with a focus on AI and business process design.

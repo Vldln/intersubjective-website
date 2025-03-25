@@ -1,3 +1,3 @@
 <template>
-  <div class="linebreak" />
+  <div class="linebreak bg-purple-900/30" />
 </template>

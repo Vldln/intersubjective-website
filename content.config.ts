@@ -20,10 +20,9 @@ const commonProjectSchema = z.object({
   title: z.string().nonempty(),
   image: z.string().url(),
   link: z.string().url(),
-  release: z.string().nonempty(),
-  date: z.string().nonempty(),
-  featured: z.boolean().optional(),
   status: z.string().nonempty(),
+  whitePaper: z.string().url(),
+  lightPaper: z.string().url(),
 });
 
 const commonTeamSchema = z.object({

@@ -1,0 +1,17 @@
+---
+title: "Bulat Nasrulin"
+image: "/team/bulatnasrulin.webp"
+link: "/team/bulatnasrulin"
+position: "Lead Researcher"
+status: "present"
+---
+
+![preview](/team/bulatnasrulin.webp)
+
+Bulat’s research is focused on two things: the fundamental limitations and tradeoffs of blockchain systems, and the design of manipulation-resilient reputation functions.
+Bulat has worked on many DLT-related projects in both industry and academia.
+
+Personal achievements:
+Since 2016, he was a part of the Hyperledger initiative as a core developer for Soramitsu.
+participated in the creation of systems such as Hyperledger Iroha, Filecoin (Fuhon), Polkadot, D3Ledger.
+From 2018 to 2019 Bulat was a researcher in the Chinese Academy of Sciences for project ChainSQL.

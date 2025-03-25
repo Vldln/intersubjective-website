@@ -18,7 +18,7 @@ const img = useImage();
   >
     <div class="flex h-56 justify-center overflow-hidden rounded-lg">
       <NuxtImg
-        :placeholder="img(`${item.image}`)"
+        :placeholder="img(`${item.image ?? `project_placeholder.webp`}`)"
         width="1536"
         :alt="item.title + ' project image'"
         class="h-full rounded-lg object-cover transition-all duration-300 hover:scale-105"
@@ -39,7 +39,7 @@ const img = useImage();
             </div>
           </div>
           <div
-            class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-white/10"
+            class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-purple-900/30"
           >
             <UIcon name="heroicons:arrow-right" class="size-3 text-white" />
           </div>
