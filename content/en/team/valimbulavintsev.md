@@ -3,10 +3,8 @@ title: "Vadim Bulavintsev"
 image: "/team/valimbulavintsev.webp"
 link: "/team/valimbulavintsev"
 position: "Team Lead"
-status: "present"
+status: "core"
 ---
-
-![preview](/team/valimbulavintsev.webp)
 
 Vadim made a long way from a solid-state physics student to a distributed systems architect. His career path included working as an independent Linux sysadmin, an IT department head, a cryptography researcher at ISDCT SB RAS (Irkutsk), a Ph.D. student in the field of GPU code optimization at ITMO University (St. Petersburg), and a distributed systems programmer/researcher at TU Delft.
 

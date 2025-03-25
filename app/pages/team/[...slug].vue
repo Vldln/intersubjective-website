@@ -29,14 +29,16 @@ if (!page.value)
 defineOgImage({
   url: page.value.image,
 });
+
+const img = useImage();
 </script>
 
 <template>
-  <div v-if="page">
+  <div v-if="page" class="mt-20">
     <FolioMeta :page :is-team="route.path.includes('/team/')" />
     <NuxtLinkLocale
       to="/"
-      class="mx-auto my-8 flex cursor-pointer items-center gap-2 px-4 text-muted hover:text-primary transition-colors duration-200 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
+      class="mx-auto my-16 flex cursor-pointer items-center gap-2 px-4 text-muted hover:text-primary transition-colors duration-200 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
     >
       <UIcon name="lucide:arrow-left" class="size-4" />
       <span class="text-sm font-extralight">
@@ -44,25 +46,32 @@ defineOgImage({
       </span>
     </NuxtLinkLocale>
     <article
-      class="writing mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
+      class="article mx-auto px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mb-8"
     >
-      <h1>
-        {{ page?.title }}
-      </h1>
+      <div class="flex gap-8 mb-8">
+        <NuxtImg
+          :placeholder="img(`${page?.image}`)"
+          width="1536"
+          :alt="page.title + ' team member image'"
+          class="h-40 w-40 aspect-square rounded-full object-cover mb-4 border-4 border-purple-500/30 dark:border-purple-900/50 border"
+          :src="page.image"
+          :aria-label="page.title + ' team member image'"
+        />
+        <div>
+          <h1 class="text-2xl font-bold normal-case">
+            {{ page?.title }}
+          </h1>
+          <h3 class="normal-case">
+            {{ page?.position }}
+          </h3>
+        </div>
+      </div>
+      <Divider class="mb-8 mt-2" />
       <ContentRenderer
-        v-if="page"
+        :preview="false"
         :dir="localeProperties?.dir ?? 'ltr'"
         :value="page"
       />
     </article>
   </div>
 </template>
-
-<style scoped>
-.info-section {
-  font-weight: 200;
-  color: #7d8084;
-  text-decoration: none;
-  text-align: left;
-}
-</style>

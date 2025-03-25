@@ -3,10 +3,8 @@ title: "Amalia Nasrulin"
 image: "/team/amalianasrulin.webp"
 link: "/team/amalianasrulin"
 position: "Designer"
-status: "present"
+status: "core"
 ---
-
-![preview](/team/amalianasrulin.webp)
 
 At first, it started as a passion then fully developed into a professional carrier.
 

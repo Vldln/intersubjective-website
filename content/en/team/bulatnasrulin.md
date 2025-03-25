@@ -3,10 +3,8 @@ title: "Bulat Nasrulin"
 image: "/team/bulatnasrulin.webp"
 link: "/team/bulatnasrulin"
 position: "Lead Researcher"
-status: "present"
+status: "core"
 ---
-
-![preview](/team/bulatnasrulin.webp)
 
 Bulat’s research is focused on two things: the fundamental limitations and tradeoffs of blockchain systems, and the design of manipulation-resilient reputation functions.
 Bulat has worked on many DLT-related projects in both industry and academia.

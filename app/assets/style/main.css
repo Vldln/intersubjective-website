@@ -75,11 +75,11 @@ html, body, #__nuxt, #__layout {
   }
 }
 
-.writing {
+.article {
   @apply font-geist text-neutral-700/90 dark:text-neutral-300 leading-relaxed;
 
   h1 {
-    @apply text-2xl sm:text-3xl text-zinc-900 dark:text-zinc-100 italic font-[600] mb-6 mt-8;
+    @apply text-2xl sm:text-3xl text-zinc-900 dark:text-zinc-100 font-[800] mb-6 mt-8;
   }
 
   h2 {
@@ -103,7 +103,7 @@ html, body, #__nuxt, #__layout {
   }
 
   a {
-    @apply text-blue-500 dark:text-blue-500 underline hover:text-blue-600;
+    @apply text-purple-500 dark:text-purple-500 underline hover:text-purple-600;
   }
 
   pre {
@@ -118,10 +118,13 @@ html, body, #__nuxt, #__layout {
     @apply text-neutral-900 dark:text-neutral-100 font-[500];
   }
 
-  ul, ol {
-    @apply mb-4 mt-4 pl-6;
+  ul {
+    @apply mb-4 mt-4 pl-6 list-disc marker:text-purple-500 dark:marker:text-purple-600;
   }
-
+  
+  ol {
+    @apply mb-4 mt-4 pl-6 list-decimal marker:text-purple-500 dark:marker:text-purple-600;
+  }
   li {
     @apply mb-1;
   }

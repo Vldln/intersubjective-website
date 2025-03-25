@@ -3,10 +3,8 @@ title: "Alina Kovtun"
 image: "/team/alinakovtun.webp"
 link: "/team/alinakovtun"
 position: "Lead Blockchain Developer"
-status: "present"
+status: "core"
 ---
-
-![preview](/team/alinakovtun.webp)
 
 Began career as a system administrator, learning Linux, and became inspired by networking and systems administration which awakened her interest in building decentralized systems. Then switched to full-stack Web, discovering Javascript and enjoying the immediate results of her work. Later, learned about the complex and mysterious blockchain system. Since then, Alina has been writing and breaking blockchain programs. Loves when her car goes fast, and code works.
 

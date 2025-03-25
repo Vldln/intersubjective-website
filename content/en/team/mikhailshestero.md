@@ -3,10 +3,8 @@ title: "Mikhail Shestero"
 image: "/team/mikhailshestero.webp"
 link: "/team/mikhailshestero"
 position: "Senior Backend Developer"
-status: "present"
+status: "core"
 ---
-
-![preview](/team/mikhailshestero.webp)
 
 Education:
 
@@ -17,6 +15,7 @@ Professional Experience:
 Current Role: Freelance Back-end Developer for padverb.com since February 2023, specializing in Scala, PostgreSQL, and Laravel.
 
 Recent Experience:
+
 - Back-end Scala Developer at LLC “ASGSoft” (Georgia, Tbilisi), focusing on REST micro-services and Python-based automated testing.
 - Scala Developer at LLC “Biznes Kvartal” (Russia, Moscow), developing ETL process utilities and performing data processing in a Linux/Docker environment.
 
