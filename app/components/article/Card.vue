@@ -17,18 +17,20 @@ defineProps({
     external
     target="_blank"
     :aria-label="title"
-    class="flex cursor-pointer flex-col gap-2"
+    class="flex cursor-pointer flex-col gap-2 group"
   >
     <div class="flex flex-col">
       <h3 class="text-lg font-semibold">
         {{ title }}
       </h3>
-      <div class="text-sm flex items-center gap-1 group">
+      <div
+        class="text-sm flex items-center gap-1 group-hover:text-purple-600 transition-all duration-500"
+      >
         {{ $t("article.Read") }}
         <div
-          class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-zinc-100"
+          class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md"
         >
-          <UIcon name="heroicons:arrow-right" class="size-3 text-zinc-100" />
+          <UIcon name="heroicons:arrow-right" class="size-3" />
         </div>
       </div>
     </div>
