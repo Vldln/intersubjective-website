@@ -33,22 +33,6 @@ const commonTeamSchema = z.object({
   status: z.string().nonempty(),
 });
 
-const commonFaqSchema = z.object({
-  title: z.string().nonempty(),
-  subtitle: z.string().nonempty(),
-  faqQuestions: z.array(
-    z.object({
-      title: z.string().nonempty(),
-      questions: z.array(
-        z.object({
-          label: z.string().nonempty(),
-          content: z.string().nonempty(),
-        })
-      ),
-    })
-  ),
-});
-
 export const collections = {
   content_en: defineCollection(
     asSeoCollection({
@@ -141,11 +125,7 @@ export const collections = {
       ),
     }),
   }),
-  faq_en: defineCollection({
-    type: "data",
-    source: "en/faq.json",
-    schema: commonFaqSchema,
-  }),
+
   team_en: defineCollection(
     asSeoCollection({
       type: "page",
