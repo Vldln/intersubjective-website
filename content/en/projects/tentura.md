@@ -1,6 +1,6 @@
 ---
 title: "Tentura"
-image: null
+image: "/projects/tentura.webp"
 link: "/projects/tentura"
 status: "active"
 ---

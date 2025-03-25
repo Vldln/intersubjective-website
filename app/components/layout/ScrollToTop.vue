@@ -24,7 +24,7 @@ function scrollToTop() {
       :class="{ 'opacity-100': isScrolling, 'opacity-0': !isScrolling }"
       @click="scrollToTop"
     >
-      <UIcon name="heroicons-arrow-up text-purple-600/70" class="z-20 size-6" />
+      <UIcon name="heroicons-arrow-up" class="z-20 size-6 text-purple-600/70" />
     </SpotlightButton>
   </div>
 </template>

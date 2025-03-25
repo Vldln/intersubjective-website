@@ -33,7 +33,7 @@ const ui = {
     </div>
     <UTabs :items orientation="horizontal" :ui="ui">
       <template #content="{ item }">
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-3">
           <component
             v-for="i in item.items"
             :key="i.title"

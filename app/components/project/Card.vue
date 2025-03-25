@@ -14,20 +14,22 @@ const img = useImage();
   <NuxtLink
     :aria-label="item.title + ' project link'"
     :to="item.link"
-    class="group relative flex cursor-pointer flex-col gap-1 rounded-lg bg-zinc-900/80 p-1"
+    class="group relative flex cursor-pointer flex-col gap-1 rounded-lg bg-purple-900/10 p-1"
   >
     <div class="flex h-56 justify-center overflow-hidden rounded-lg">
       <NuxtImg
         :placeholder="img(`${item.image ?? `project_placeholder.webp`}`)"
         width="1536"
         :alt="item.title + ' project image'"
-        class="h-full rounded-lg object-cover transition-all duration-300 hover:scale-105"
+        class="h-full rounded-lg object-cover transition-all duration-300 hover:scale-105 grayscale hover:grayscale-0"
         :src="item.image"
         :aria-label="item.title + ' project image'"
       />
     </div>
     <div class="absolute bottom-0 flex w-full justify-center">
-      <div class="rounded-t-lg px-4 py-[5px] backdrop-blur-md sm:w-2/3">
+      <div
+        class="rounded-t-lg px-4 py-[5px] backdrop-blur-md sm:w-2/3 bg-purple-900/30"
+      >
         <div class="flex items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <div class="flex items-center gap-2">
@@ -39,7 +41,7 @@ const img = useImage();
             </div>
           </div>
           <div
-            class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-purple-900/30"
+            class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-white/30"
           >
             <UIcon name="heroicons:arrow-right" class="size-3 text-white" />
           </div>
