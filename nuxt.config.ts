@@ -25,9 +25,15 @@ export default defineNuxtConfig({
   css: ["~/assets/style/main.css"],
 
   site: {
-    url: "https://intersubjective.space/",
+    url: process.env.WEBSITE_URL,
     defaultLocale: "en",
     indexable: true,
+  },
+
+  runtimeConfig: {
+    public: {
+      websiteUrl: process.env.WEBSITE_URL || "https://intersubjective.space/",
+    },
   },
 
   colorMode: {
@@ -52,12 +58,6 @@ export default defineNuxtConfig({
         default: "github-dark",
         light: "github-light",
       },
-    },
-  },
-
-  runtimeConfig: {
-    public: {
-      resend: !!process.env.NUXT_PRIVATE_RESEND_API_KEY,
     },
   },
 

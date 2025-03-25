@@ -1,12 +1,5 @@
 export default defineAppConfig({
   global: {},
-  profile: {
-    name: "Hugo Richard",
-    job: "Frontend Architect and Designer",
-    email: "contact@hrcd.fr",
-    phone: "(+33) 6 21 56 22 18",
-    picture: "https://avatars.githubusercontent.com/u/71938701?v=4",
-  },
   socials: {
     // github: "https://github.com/HugoRCD",
     // twitter: "https://twitter.com/HugoRCD__",
@@ -19,7 +12,7 @@ export default defineAppConfig({
     title: "Intersubjective",
     description:
       "is a web3 and sociotech R&D company based in the Netherlands.",
-    url: "https://intersubjective.space/",
+    url: "http://localhost:3000/",
   },
   ui: {
     colors: {

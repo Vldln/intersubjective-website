@@ -14,7 +14,7 @@ const { page, isWriting } = defineProps<{
 }>();
 
 const route = useRoute();
-const { link, seo, profile } = useAppConfig();
+const { link, seo } = useAppConfig();
 
 const pageSEO = computed(() => ({
   title: isWriting ? page?.title : page?.title || seo.title,
@@ -35,7 +35,6 @@ useSeoMeta({
   ogDescription: pageSEO.value.description,
   ogType: isWriting ? "article" : "website",
   ogUrl: seo.url,
-  author: profile.name,
   title: pageSEO.value.title,
   description: pageSEO.value.description,
   twitterTitle: pageSEO.value.title,
@@ -55,11 +54,12 @@ useHead({
   link,
 });
 
-defineOgImage({
-  url: "https://canvas.hrcd.fr/og.png",
+defineOgImageComponent("Main", {
+  title: pageSEO.value.title,
+  description: pageSEO.value.description,
   width: 1200,
   height: 630,
-  alt: "Home image",
+  alt: pageSEO.value.title,
 });
 </script>
 
