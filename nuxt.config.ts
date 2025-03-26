@@ -33,6 +33,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       site: process.env.WEBSITE_URL || "https://intersubjective.space/",
+      contactEmail: process.env.CONTACT_EMAIL,
+      resend: !!process.env.NUXT_PRIVATE_RESEND_API_KEY,
     },
   },
 

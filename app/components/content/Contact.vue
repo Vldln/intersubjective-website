@@ -9,8 +9,6 @@ const isResendEnabled = useRuntimeConfig().public.resend;
 const state = ref({
   email: "",
   message: "",
-  phone: "",
-  fullname: "",
   subject: "",
 });
 
@@ -18,7 +16,6 @@ const schema = z.object({
   email: z.string().email("Invalid email"),
   message: z.string().min(10, "Message is too short"),
   subject: z.string().min(5, "Subject is too short"),
-  fullname: z.string().min(3, "Name is too short"),
 });
 type Schema = z.output<typeof schema>;
 
@@ -34,8 +31,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     state.value = {
       email: "",
       message: "",
-      phone: "",
-      fullname: "",
       subject: "",
     };
     toast.success(t("contact.success"));
@@ -89,7 +84,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           />
         </UFormField>
         <div class="flex justify-center">
-          <UTooltip :disabled="isResendEnabled" :text="$t('contact.disabled')">
+          <UTooltip :disabled="!isResendEnabled" :text="$t('contact.disabled')">
             <UButton :loading :disabled="!isResendEnabled" type="submit" block>
               {{ $t("contact.submit") }}
             </UButton>
