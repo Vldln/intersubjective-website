@@ -26,9 +26,9 @@ export default defineNuxtSchema({
         url: field({
           type: "string",
           title: "URL",
-          description: "http://localhost:3000/",
+          description: "http://vldln-intersubjective-website.nuxt.space/",
           icon: "lucide:link",
-          default: "http://localhost:3000/",
+          default: "http://vldln-intersubjective-website.nuxt.space/",
         }),
         lang: field({
           type: "string",

@@ -12,7 +12,7 @@ export default defineAppConfig({
     title: "Intersubjective",
     description:
       "is a web3 and sociotech R&D company based in the Netherlands.",
-    url: "http://localhost:3000/",
+    url: "http://vldln-intersubjective-website.nuxt.space/",
   },
   ui: {
     colors: {
