@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      websiteUrl: process.env.WEBSITE_URL || "https://intersubjective.space/",
+      site: process.env.WEBSITE_URL || "https://intersubjective.space/",
     },
   },
 
