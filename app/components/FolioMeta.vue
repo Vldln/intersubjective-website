@@ -44,7 +44,9 @@ useSeoMeta({
 
 useHead({
   title: pageSEO.value.title,
-  titleTemplate: getTitleTemplate,
+  titleTemplate: getTitleTemplate as (
+    title: string | undefined
+  ) => string | null,
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1.0" },
     { name: "charset", content: "utf-8" },

@@ -10,13 +10,12 @@ const ui = {
   content: "mt-8",
   indicator:
     "absolute top-[4px] duration-200 ease-out focus:outline-none bg-white dark:bg-neutral-900",
-  trigger: [
-    "rounded-none text-lg relative inline-flex items-center justify-center flex-shrink-0 focus:outline-none transition-colors duration-200 ease-out border-purple-900/30 border-b-4",
-    "px-3 py-2 font-medium",
-    "hover:bg-neutral-900/80",
-    "data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white",
-    "data-[state=inactive]:text-neutral-500 dark:data-[state=inactive]:text-neutral-400",
-  ],
+  trigger:
+    "rounded-none text-lg relative inline-flex items-center justify-center flex-shrink-0 focus:outline-none transition-colors duration-200 ease-out border-purple-900/30 border-b-4" +
+    " px-3 py-2 font-medium" +
+    " hover:bg-neutral-900/80" +
+    " data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white" +
+    " data-[state=inactive]:text-neutral-500 dark:data-[state=inactive]:text-neutral-400",
 
   label: "truncate",
 };

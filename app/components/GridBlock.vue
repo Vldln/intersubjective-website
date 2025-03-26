@@ -8,9 +8,21 @@ defineProps({
     type: Number,
     required: true,
   },
-})
+});
 
-const grid = inject('grid-context')
+interface GridContext {
+  size: number;
+  offsetX: number;
+  offsetY: number;
+}
+
+const grid: GridContext =
+  inject("grid-context") ||
+  ({
+    size: 64,
+    offsetX: -1,
+    offsetY: -1,
+  } as GridContext);
 </script>
 
 <template>
