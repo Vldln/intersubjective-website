@@ -1,13 +1,13 @@
-name: Build and Push Portfolio Docker Image
+name: Build and Push Intersubjective Website Docker Image
 
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Version tag (ex: v1.0.0)'
+        description: "Version tag (ex: v1.0.0)"
         required: true
         type: string
 
