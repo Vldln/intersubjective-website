@@ -25,14 +25,15 @@ export default defineNuxtConfig({
   css: ["~/assets/style/main.css"],
 
   site: {
-    url: process.env.WEBSITE_URL,
+    url: process.env.NUXT_PUBLIC_SITE_URL,
     defaultLocale: "en",
     indexable: true,
   },
 
   runtimeConfig: {
     public: {
-      site: process.env.WEBSITE_URL || "https://intersubjective.space/",
+      site:
+        process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
       contactEmail: process.env.CONTACT_EMAIL,
       resend: !!process.env.NUXT_PRIVATE_RESEND_API_KEY,
     },
