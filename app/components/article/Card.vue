@@ -12,9 +12,8 @@ defineProps({
 </script>
 
 <template>
-  <NuxtLink
-    :to="path"
-    external
+  <ULink
+    :href="path"
     target="_blank"
     :aria-label="title"
     class="flex cursor-pointer flex-col gap-2 group"
@@ -34,5 +33,5 @@ defineProps({
         </div>
       </div>
     </div>
-  </NuxtLink>
+  </ULink>
 </template>

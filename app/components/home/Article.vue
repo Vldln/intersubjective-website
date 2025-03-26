@@ -19,11 +19,7 @@ const { data: articles } = await useAsyncData(
 if (!articles.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
 
-const tags = computed(() =>
-  Array.from(new Set(articles.value?.flatMap((article) => article.tags)))
-);
-
-const filteredArticles = computed(() => articles.value ?? []);
+const articlesList = computed(() => articles.value ?? []);
 </script>
 
 <template>
@@ -33,14 +29,9 @@ const filteredArticles = computed(() => articles.value ?? []);
         {{ $t("article.title") }}
       </h3>
     </div>
-    <TransitionGroup
-      v-if="filteredArticles.length"
-      name="list"
-      tag="ul"
-      class="flex flex-col gap-4"
-    >
-      <li v-for="article of filteredArticles" :key="article.path">
-        <ArticleCard :title="article.title" :path="article.path" />
+    <TransitionGroup name="list" tag="ul" class="flex flex-col gap-4">
+      <li v-for="article of articlesList" :key="article.path">
+        <ArticleCard :title="article.title" :path="article.link" />
       </li>
     </TransitionGroup>
   </div>
