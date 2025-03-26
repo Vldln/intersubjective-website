@@ -9,6 +9,13 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
   ],
 
+  image: {
+    domains: [
+      process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
+    ],
+    format: ["jpg", "jpeg", "png", "webp"],
+  },
+
   imports: {
     presets: [
       {
