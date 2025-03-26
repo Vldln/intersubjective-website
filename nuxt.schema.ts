@@ -1,7 +1,5 @@
 import { field, group } from "@nuxt/content/preview";
 
-const config = useRuntimeConfig();
-
 export default defineNuxtSchema({
   appConfig: {
     seo: group({

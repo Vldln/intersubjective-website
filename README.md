@@ -16,7 +16,7 @@
 1. Clone this repository if you have access or download it from the store
 
 ```bash
-git clone git@github.com:HugoRCD/canvas.git
+git clone git@github.com:Vldln/Intersubjective/intersubjective-website.git
 ```
 
 2. Install dependencies
@@ -50,8 +50,6 @@ pnpm start
 ```
 
 ## Deployments
-
-Canvas Portfolio is designed to simplify the deployment process on various platforms, whether serverless or not. Below are several detailed methods to deploy your portfolio.
 
 ### 1. Serverless Platforms (Vercel, Netlify, etc.)
 
