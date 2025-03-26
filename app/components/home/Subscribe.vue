@@ -20,7 +20,7 @@ const loading = ref(false);
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   loading.value = true;
   try {
-    await $fetch("/api/emails/send", {
+    await $fetch("/api/emails/subscribe", {
       method: "POST",
       body: event.data,
     });

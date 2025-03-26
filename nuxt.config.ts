@@ -97,6 +97,11 @@ export default defineNuxtConfig({
           route: "/api/emails/send",
           handler: "~~/server/emails/send.ts",
         });
+        config.handlers?.push({
+          method: "post",
+          route: "/api/emails/subscribe",
+          handler: "~~/server/emails/subscribe.ts",
+        });
       }
     },
   },
