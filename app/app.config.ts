@@ -10,9 +10,12 @@ export default defineAppConfig({
   },
   seo: {
     title: "Intersubjective",
+
     description:
-      "is a web3 and sociotech R&D company based in the Netherlands.",
-    url: "http://vldln-intersubjective-website.nuxt.space/",
+      "web3 / sociotech R&D company (Netherlands)",
+
+    url: "http://intersubjective.space",
+    lang: "en",
   },
   ui: {
     colors: {

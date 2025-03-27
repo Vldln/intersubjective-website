@@ -2,12 +2,12 @@
   "title": "Team",
   "teamCategories": [
     {
-      "title": "Core",
+      "title": "Core Team",
       "type": "core"
     },
     {
-      "title": "Contributors",
-      "type": "contributors"
+      "title": "Former Contributors",
+      "type": "former"
     }
   ]
 }
