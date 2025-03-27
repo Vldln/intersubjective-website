@@ -51,13 +51,10 @@ pnpm start
 
 ## Deployments
 
-### 1. Serverless Platforms (Vercel, Netlify, etc.)
+### Nuxt Studio [https://nuxt.studio/](https://nuxt.studio/)
 
-When using serverless platforms, it's important to note that Nuxt Content v3 relies by default on SQLite for content storage. Since these platforms do not support SQLite natively, we recommend connecting Canvas Portfolio to an external database such as:
+Allow edit content, but dont work with ssr. Its mean server routes with email forms dont work.
 
-- **PostgreSQL**
-- **Turso**
-- **D1**
+### Vercel [https://vercel.com/](https://vercel.com/)
 
-For further details on this process and the suitable solutions for serverless deployments, refer to the official Nuxt Content documentation:  
-[Nuxt Content and Serverless Deployment](https://content.nuxt.com/docs/deploy/serverless)
+Allow work app ssr. Better for main deploy.
