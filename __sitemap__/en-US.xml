@@ -21,36 +21,6 @@
         <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/contact" hreflang="en-US" />
     </url>
     <url>
-        <loc>https://vldln-intersubjective-website.nuxt.space/en/articles/achieving-sybil-proofness-in-distributed-work-systems</loc>
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/achieving-sybil-proofness-in-distributed-work-systems" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/achieving-sybil-proofness-in-distributed-work-systems" hreflang="en-US" />
-    </url>
-    <url>
-        <loc>https://vldln-intersubjective-website.nuxt.space/en/articles/decentralized-collaborative-version-control</loc>
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/decentralized-collaborative-version-control" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/decentralized-collaborative-version-control" hreflang="en-US" />
-    </url>
-    <url>
-        <loc>https://vldln-intersubjective-website.nuxt.space/en/articles/l0-an-accountable-mempool-for-mev-resistance</loc>
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/l0-an-accountable-mempool-for-mev-resistance" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/l0-an-accountable-mempool-for-mev-resistance" hreflang="en-US" />
-    </url>
-    <url>
-        <loc>https://vldln-intersubjective-website.nuxt.space/en/articles/meritrank-sybil-tolerant-reputation-for-merit-based-tokenomics</loc>
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/meritrank-sybil-tolerant-reputation-for-merit-based-tokenomics" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/meritrank-sybil-tolerant-reputation-for-merit-based-tokenomics" hreflang="en-US" />
-    </url>
-    <url>
-        <loc>https://vldln-intersubjective-website.nuxt.space/en/articles/sustainable-cooperation-in-peer-to-peer-networks</loc>
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/sustainable-cooperation-in-peer-to-peer-networks" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/sustainable-cooperation-in-peer-to-peer-networks" hreflang="en-US" />
-    </url>
-    <url>
-        <loc>https://vldln-intersubjective-website.nuxt.space/en/articles/sybil-proof-accounting-mechanisms-with-transitive-trust</loc>
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/sybil-proof-accounting-mechanisms-with-transitive-trust" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/articles/sybil-proof-accounting-mechanisms-with-transitive-trust" hreflang="en-US" />
-    </url>
-    <url>
         <loc>https://vldln-intersubjective-website.nuxt.space/en/projects/ledgerzero</loc>
         <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/projects/ledgerzero" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/projects/ledgerzero" hreflang="en-US" />
@@ -64,6 +34,36 @@
         <loc>https://vldln-intersubjective-website.nuxt.space/en/projects/tentura</loc>
         <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/projects/tentura" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/projects/tentura" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/achieving-sybil-proofness-in-distributed-work-systems</loc>
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/achieving-sybil-proofness-in-distributed-work-systems" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/achieving-sybil-proofness-in-distributed-work-systems" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/decentralized-collaborative-version-control</loc>
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/decentralized-collaborative-version-control" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/decentralized-collaborative-version-control" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/l0-an-accountable-mempool-for-mev-resistance</loc>
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/l0-an-accountable-mempool-for-mev-resistance" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/l0-an-accountable-mempool-for-mev-resistance" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/meritrank-sybil-tolerant-reputation-for-merit-based-tokenomics</loc>
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/meritrank-sybil-tolerant-reputation-for-merit-based-tokenomics" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/meritrank-sybil-tolerant-reputation-for-merit-based-tokenomics" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/sustainable-cooperation-in-peer-to-peer-networks</loc>
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/sustainable-cooperation-in-peer-to-peer-networks" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/sustainable-cooperation-in-peer-to-peer-networks" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/sybil-proof-accounting-mechanisms-with-transitive-trust</loc>
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/sybil-proof-accounting-mechanisms-with-transitive-trust" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/relevant-reading/sybil-proof-accounting-mechanisms-with-transitive-trust" hreflang="en-US" />
     </url>
     <url>
         <loc>https://vldln-intersubjective-website.nuxt.space/en/team/aleksandrpstonikov</loc>
@@ -111,4 +111,4 @@
         <xhtml:link rel="alternate" href="https://vldln-intersubjective-website.nuxt.space/en/team/vladimirradkevich" hreflang="en-US" />
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.6 at 2025-03-27T23:00:12.257Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.6 at 2025-03-29T20:03:24.868Z -->
