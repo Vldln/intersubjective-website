@@ -1,13 +1,17 @@
 {
-  "title": "Projects",
+  "title": "Projects and Products",
   "projectCategories": [
     {
       "title": "Active",
       "type": "active"
     },
     {
-      "title": "Past",
+      "title": "Finished",
       "type": "past"
+    },
+    {
+      "title": "Future",
+      "type": "future"
     }
   ]
 }

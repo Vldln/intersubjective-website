@@ -1,10 +1,10 @@
 ---
-title: "LedgerZero"
+title: LedgerZero
 image: null
-link: "/projects/ledgerzero"
-status: "past"
-lightPaper: "https://docsend.com/view/amw9t337z7khmshr"
-whitePaper: "https://docsend.com/view/czj6sitarji29zth"
+link: /projects/ledgerzero
+status: past
+lightPaper: https://docsend.com/view/amw9t337z7khmshr
+whitePaper: https://docsend.com/view/czj6sitarji29zth
 website: null
 ---
 
