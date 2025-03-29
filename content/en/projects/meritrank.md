@@ -2,7 +2,7 @@
 title: MeritRank
 image: null
 link: /projects/meritrank
-status: past
+status: active
 lightPaper: https://docsend.com/view/zvgkei7fzfvf8eyg
 whitePaper: https://docsend.com/view/yts6mm2hkweswqjq
 website: null
