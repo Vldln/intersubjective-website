@@ -53,18 +53,20 @@
         >
           <slot name="hero_subtitle" mdc-unwrap="p" />
         </h2>
-        <Divider class="my-9" />
+
+        <HomeProject
+          style="--stagger: 6"
+          data-animate
+          class="sm:px-20 md:px-30"
+        />
+
+        <Divider class="mb-9 mt-40" />
         <HomeSubscribe style="--stagger: 3" data-animate>
           <template #title>
             {{ $t("global.subscribe.label") }}
           </template>
         </HomeSubscribe>
-        <Divider class="my-9" />
-        <HomeProject
-          style="--stagger: 6"
-          data-animate
-          class="mt-40 sm:px-20 md:px-30"
-        />
+
         <Divider class="my-9" />
         <HomeArticle style="--stagger: 6" data-animate class="mt-40" />
       </div>
