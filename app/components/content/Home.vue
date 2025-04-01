@@ -1,7 +1,7 @@
 <template>
   <section class="relative">
     <div
-      class="font-geist bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat h-screen flex flex-col items-center justify-center"
+      class="font-geist bg-[url('/hero.webp')] bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center"
       style="
         background-image: linear-gradient(
             rgba(10, 10, 10, 0.3),
@@ -14,9 +14,7 @@
       data-animate
     >
       <Logo class="mx-auto mb-8 size-18 md:size-30" />
-      <div
-        class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center sm:items-start"
-      >
+      <div class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center">
         <h1
           class="mx-auto mb-4 sm:mb-8 flex gap-3 text-center sm:text-left font-bold text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
         >
