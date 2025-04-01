@@ -44,9 +44,5 @@ const items = computed(() => {
 </script>
 
 <template>
-  <Tabs v-if="items" :items="items" :component="TeamCard">
-    <template #title>
-      {{ teamCategories?.title }}
-    </template>
-  </Tabs>
+  <Tabs v-if="items" :items="items" :component="TeamCard" />
 </template>

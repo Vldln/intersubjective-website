@@ -60,9 +60,11 @@
           </template>
         </HomeSubscribe>
         <Divider class="my-9" />
-        <HomeProject style="--stagger: 6" data-animate class="mt-40" />
-        <Divider class="my-9" />
-        <HomeTeam style="--stagger: 6" data-animate class="mt-40" />
+        <HomeProject
+          style="--stagger: 6"
+          data-animate
+          class="mt-40 sm:px-20 md:px-30"
+        />
         <Divider class="my-9" />
         <HomeArticle style="--stagger: 6" data-animate class="mt-40" />
       </div>

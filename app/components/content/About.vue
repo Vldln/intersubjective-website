@@ -4,7 +4,7 @@ const stack = await queryCollection("stack").first();
 
 <template>
   <section
-    class="mx-auto mt-4 flex max-w-4xl flex-col p-7 sm:mt-20 text-[var(--ui-text-toned)]"
+    class="mx-auto mt-4 flex max-w-4xl flex-col p-6 sm:mt-20 text-[var(--ui-text-toned)]"
   >
     <h1 class="text-white-shadow text-4xl">
       <slot name="title" mdc-unwrap="p" />
@@ -23,5 +23,8 @@ const stack = await queryCollection("stack").first();
         </div>
       </div>
     </div>
+  </section>
+  <section class="mx-auto mt-4 max-w-4xl px-6 text-[var(--ui-text-toned)]">
+    <AboutTeam style="--stagger: 6" data-animate />
   </section>
 </template>
