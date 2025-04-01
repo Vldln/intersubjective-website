@@ -16,6 +16,7 @@ const commonProjectSchema = z.object({
   title: z.string().nonempty(),
   image: z.string().url(),
   link: z.string().url(),
+  short: z.string().nonempty(),
   status: z.string().nonempty(),
   whitePaper: z.string().url(),
   lightPaper: z.string().url(),

@@ -5,6 +5,7 @@ defineProps<{
     release: string;
     image: string;
     link: string;
+    short: string;
   };
 }>();
 const img = useImage();
@@ -16,7 +17,7 @@ const img = useImage();
     :to="item.link"
     class="group relative flex cursor-pointer flex-col gap-1 rounded-lg bg-purple-900/10 p-1"
   >
-    <div class="flex h-56 justify-center overflow-hidden rounded-lg">
+    <div class="flex h-70 justify-center overflow-hidden rounded-lg">
       <NuxtImg
         :placeholder="img(`${item.image ?? `project_placeholder.webp`}`)"
         width="1536"
@@ -26,10 +27,8 @@ const img = useImage();
         :aria-label="item.title + ' project image'"
       />
     </div>
-    <div class="absolute bottom-0 flex w-full justify-center">
-      <div
-        class="rounded-t-lg px-4 py-[5px] backdrop-blur-md sm:w-2/3 bg-purple-900/30"
-      >
+    <div class="absolute bottom-0 flex w-full justify-center pl-2">
+      <div class="rounded-lg px-4 py-[5px] backdrop-blur-md bg-purple-900/30">
         <div class="flex items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <div class="flex items-center gap-2">
@@ -45,6 +44,9 @@ const img = useImage();
           >
             <UIcon name="heroicons:arrow-right" class="size-3 text-white" />
           </div>
+        </div>
+        <div class="text-xs text-white/90 mb-2 h-16">
+          {{ item.short.split(" ").slice(0, 20).join(" ") + "..." }}
         </div>
       </div>
     </div>
