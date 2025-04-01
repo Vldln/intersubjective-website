@@ -13,7 +13,7 @@
       "
       data-animate
     >
-      <Logo size="14" class="mx-auto mb-8" />
+      <Logo class="mx-auto mb-8 size-18 md:size-30" />
       <div
         class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center sm:items-start"
       >

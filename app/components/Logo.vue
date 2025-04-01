@@ -6,10 +6,6 @@ defineProps({
     type: Boolean,
     default: false,
   },
-  size: {
-    type: String,
-    default: "8",
-  },
 });
 </script>
 
@@ -21,7 +17,6 @@ defineProps({
   >
     <NuxtImg
       src="/logo.svg"
-      :class="`size-${size}`"
       class="transition-all duration-300 hover:scale-105"
     />
     <span v-if="isText" class="ml-1 text-xs font-semibold">
