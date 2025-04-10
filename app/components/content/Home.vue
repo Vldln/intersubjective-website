@@ -13,13 +13,14 @@ onMounted(() => {
 <template>
   <section class="relative">
     <div id="particles-js" class="absolute w-full h-[40%]"></div>
-
     <div
-      class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0"
+      class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0 pointer-events-none"
       data-animate
     >
-      <Logo class="mx-auto mb-8 size-18 md:size-30" />
-      <div class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center">
+      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto" />
+      <div
+        class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center pointer-events-auto"
+      >
         <h1
           class="mx-auto mb-4 sm:mb-8 flex gap-3 text-center sm:text-left font-bold text-pretty bg-clip-text text-4xl text-white/75 lg:max-w-3xl lg:text-[100px]"
         >
@@ -32,7 +33,7 @@ onMounted(() => {
         </h2>
 
         <ULink
-          class="w-fit rounded-md mt-4 text-xl bg-purple-900/30 text-white/90 hover:bg-purple-900/90 px-4 border-2 border-purple-900 py-2 flex group"
+          class="w-fit rounded-md mt-4 text-xl bg-purple-900/30 text-white/90 hover:bg-purple-900/90 px-4 border-2 border-purple-900 py-2 flex group pointer-events-auto"
           to="/about"
         >
           <slot name="hero_button" mdc-unwrap="p" />
