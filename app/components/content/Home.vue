@@ -1,16 +1,21 @@
+<script setup lang="ts">
+onMounted(() => {
+  // @ts-expect-error
+  if (typeof window !== "undefined" && window.particlesJS) {
+    // @ts-expect-error
+    window.particlesJS.load("particles-js", "/particles.json", () => {
+      console.log("Particles.js loaded");
+    });
+  }
+});
+</script>
+
 <template>
   <section class="relative">
+    <div id="particles-js" class="absolute w-full h-[40%]"></div>
+
     <div
-      class="font-geist bg-[url('/hero.webp')] bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center"
-      style="
-        background-image: linear-gradient(
-            rgba(10, 10, 10, 0.3),
-            rgba(10, 10, 10, 1)
-          ),
-          url('/hero.webp');
-        --stagger: 1;
-        --delay: 10ms;
-      "
+      class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0"
       data-animate
     >
       <Logo class="mx-auto mb-8 size-18 md:size-30" />

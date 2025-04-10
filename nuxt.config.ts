@@ -9,6 +9,17 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
   ],
 
+  app: {
+    head: {
+      script: [
+        {
+          src: "http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js",
+          defer: true,
+        },
+      ],
+    },
+  },
+
   image: {
     domains: [
       process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
