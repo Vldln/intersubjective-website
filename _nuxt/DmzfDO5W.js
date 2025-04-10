@@ -1,0 +1,1 @@
+import{am as r,an as u,R as i}from"./JSwSOLqS.js";import{f as a}from"./Dotq8rN5.js";function I(t,n="reka"){return r({useId:void 0}),`${n}-${u()}`}const $=(t,n,e,...d)=>t[n]?i({...t,[n]:()=>a(t[n](),(e==null?void 0:e.unwrap)||(e==null?void 0:e.mdcUnwrap))},n,e,...d):i(t,n,e,...d);export{$ as r,I as u};
