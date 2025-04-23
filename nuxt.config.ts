@@ -8,19 +8,26 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "@nuxtjs/color-mode",
+    //"nuxt-particles",
   ],
 
   app: {
     head: {
       script: [
         {
-          src: "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js",
+          src: "https://cdn.jsdelivr.net/npm/@tsparticles/all@3.0.2/tsparticles.all.bundle.min.js",
           defer: true,
         },
       ],
     },
   },
 
+  /*
+  particles: {
+    mode: "full", // 'full' | 'slim' | 'basic' | 'custom'
+    lazy: true,
+  },
+*/
   image: {
     domains: [
       process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
