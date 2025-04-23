@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/scripts",
+    "@nuxtjs/color-mode",
   ],
 
   app: {
@@ -60,6 +61,8 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "dark",
     fallback: "dark",
+    classPrefix: "",
+    classSuffix: "",
   },
 
   content: {
