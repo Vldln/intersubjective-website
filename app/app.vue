@@ -16,11 +16,7 @@ const { locale: i18nLocale } = useI18n()
       <LayoutScrollToTop />
       <Suspense>
         <template #default>
-          <NuxtLayout>
-            <UApp :locale="locales[i18nLocale]">
-              <NuxtPage />
-            </UApp>
-          </NuxtLayout>
+          <LoadingPage />
         </template>
         <template #fallback>
           <LoadingPage />
