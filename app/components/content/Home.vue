@@ -233,9 +233,6 @@ onMounted(() => {
       class="relative mx-auto flex max-w-7xl flex-col justify-center gap-4 px-4 py-8 sm:px-6 lg:px-8 lg:py-16"
     >
       <div class="z-20 flex flex-col items-center justify-center">
-        <!-- social -->
-        <!-- <HomeSocial style="--stagger: 3" data-animate /> -->
-        <!-- subtitle -->
         <h2
           class="mx-auto mt-4 max-w-4xl text-center text-4xl antialiased text-white/90"
         >
