@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const { seo } = useAppConfig();
+const { seo } = useAppConfig()
 
 withDefaults(
   defineProps<{
-    title?: string;
-    description?: string;
+    title?: string
+    description?: string
   }>(),
   {
-    title: "Home",
+    title: 'Home',
     description:
-      "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
-  }
-);
+      'Intersubjective is a web3 and sociotech R&D company based in the Netherlands.',
+  },
+)
 </script>
 
 <template>
@@ -28,7 +28,7 @@ withDefaults(
             :src="`${seo.url}logo.svg`"
             alt="Intersubjective"
             class="size-10 mr-2"
-          />
+          >
           <span class="text-primary text-4xl">Intersubjective</span>
         </p>
         <h1

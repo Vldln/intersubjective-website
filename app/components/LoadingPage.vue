@@ -1,46 +1,27 @@
 <template>
   <div class="loading">
-    <div id="tsparticles"></div>
+    <div id="tsparticles" />
   </div>
 </template>
 
 <script setup lang="ts">
-const scatterParticles = () => {
-  const container = document.getElementById('tsparticles')
-  if (container) {
-    const particles = (container as any).particles
-    if (particles) {
-      particles.move.speed = 10
-      particles.move.direction = 'none'
-      particles.move.random = true
-      particles.opacity.value = 0
-      particles.size.value = 0
-      particles.links.opacity = 0
-    }
-  }
-}
-
-defineExpose({
-  scatterParticles
-})
-
 onMounted(() => {
   tsParticles.load({
-    id: "tsparticles",
+    id: 'tsparticles',
     options: {
       particles: {
         number: {
           value: 80,
           density: {
             enable: true,
-            value_area: 800
-          }
+            value_area: 800,
+          },
         },
         color: {
-          value: '#8b5cf6'
+          value: '#8b5cf6',
         },
         shape: {
-          type: 'circle'
+          type: 'circle',
         },
         opacity: {
           value: 0.8,
@@ -50,8 +31,8 @@ onMounted(() => {
             speed: 0.5,
             minimumValue: 0.3,
             maximumValue: 0.8,
-            sync: false
-          }
+            sync: false,
+          },
         },
         size: {
           value: 3,
@@ -61,15 +42,15 @@ onMounted(() => {
             speed: 0.5,
             minimumValue: 2,
             maximumValue: 4,
-            sync: false
-          }
+            sync: false,
+          },
         },
         links: {
           enable: true,
           distance: 100,
           color: '#8b5cf6',
           opacity: 0.4,
-          width: 1
+          width: 1,
         },
         move: {
           enable: true,
@@ -78,48 +59,48 @@ onMounted(() => {
           random: false,
           straight: false,
           outModes: {
-            default: 'bounce'
+            default: 'bounce',
           },
           attract: {
             enable: true,
             rotateX: 600,
-            rotateY: 1200
-          }
-        }
+            rotateY: 1200,
+          },
+        },
       },
       interactivity: {
         detectOn: 'canvas',
         events: {
           onHover: {
             enable: true,
-            mode: 'grab'
+            mode: 'grab',
           },
           onClick: {
             enable: true,
-            mode: 'push'
+            mode: 'push',
           },
-          resize: true
+          resize: true,
         },
         modes: {
           grab: {
             distance: 140,
             line_linked: {
-              opacity: 1
-            }
+              opacity: 1,
+            },
           },
           push: {
-            quantity: 4
-          }
-        }
+            quantity: 4,
+          },
+        },
       },
       background: {
-        color: 'transparent'
+        color: 'transparent',
       },
       fullScreen: {
         enable: true,
-        zIndex: -1
-      }
-    }
+        zIndex: -1,
+      },
+    },
   })
 })
 </script>
@@ -145,4 +126,4 @@ onMounted(() => {
   top: 0;
   left: 0;
 }
-</style> 
+</style>

@@ -1,12 +1,12 @@
-import en_navigation from "./en/navigation.json";
+import en_navigation from './en/navigation.json'
 
-import en_contact from "./en/contact.json";
+import en_contact from './en/contact.json'
 
-import en_global from "./en/global.json";
+import en_global from './en/global.json'
 
-import en_article from "./en/article.json";
+import en_article from './en/article.json'
 
-import en_project from "./en/project.json";
+import en_project from './en/project.json'
 
 const messages = {
   en: {
@@ -16,6 +16,6 @@ const messages = {
     project: en_project,
     article: en_article,
   },
-};
+}
 
-export default messages;
+export default messages

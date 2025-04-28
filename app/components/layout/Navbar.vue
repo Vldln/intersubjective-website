@@ -4,12 +4,12 @@ defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 
-const navigation = getNavigation("home") as Record<string, Navigation>;
+const navigation = getNavigation('home') as Record<string, Navigation>
 
-const route = useRoute();
-const localePath = useLocalePath();
+const route = useRoute()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -36,7 +36,10 @@ const localePath = useLocalePath();
             :to="localePath(item.to)"
             class="flex items-center rounded-lg border border-transparent px-4 py-1 transition-all duration-300 ease-in-out sm:px-6 hover:text-white/75"
           >
-            <UIcon :name="item.icon" class="size-7 font-light sm:size-6" />
+            <UIcon
+              :name="item.icon"
+              class="size-7 font-light sm:size-6"
+            />
           </NuxtLink>
         </nav>
       </SpotlightButton>

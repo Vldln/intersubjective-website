@@ -1,42 +1,42 @@
-import { field, group } from "@nuxt/content/preview";
+import { field, group } from '@nuxt/content/preview'
 
 export default defineNuxtSchema({
   appConfig: {
     seo: group({
-      title: "SEO",
-      description: "SEO configuration",
-      icon: "lucide:search",
+      title: 'SEO',
+      description: 'SEO configuration',
+      icon: 'lucide:search',
       fields: {
         title: field({
-          type: "string",
-          title: "Title",
-          description: "Intersubjective",
-          icon: "lucide:title",
-          default: "Intersubjective",
+          type: 'string',
+          title: 'Title',
+          description: 'Intersubjective',
+          icon: 'lucide:title',
+          default: 'Intersubjective',
         }),
         description: field({
-          type: "string",
-          title: "Description",
+          type: 'string',
+          title: 'Description',
           description:
-            "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
-          icon: "lucide:description",
+            'Intersubjective is a web3 and sociotech R&D company based in the Netherlands.',
+          icon: 'lucide:description',
           default:
-            "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
+            'Intersubjective is a web3 and sociotech R&D company based in the Netherlands.',
         }),
         url: field({
-          type: "string",
-          title: "URL",
-          description: "http://vldln-intersubjective-website.nuxt.space/",
-          icon: "lucide:link",
-          default: "http://vldln-intersubjective-website.nuxt.space/",
+          type: 'string',
+          title: 'URL',
+          description: 'http://vldln-intersubjective-website.nuxt.space/',
+          icon: 'lucide:link',
+          default: 'http://vldln-intersubjective-website.nuxt.space/',
         }),
         lang: field({
-          type: "string",
-          title: "Language",
-          description: "The language that you want to use for your website.",
-          icon: "lucide:language",
-          default: "en",
-          required: ["en"],
+          type: 'string',
+          title: 'Language',
+          description: 'The language that you want to use for your website.',
+          icon: 'lucide:language',
+          default: 'en',
+          required: ['en'],
         }),
       },
     }),
@@ -83,4 +83,4 @@ export default defineNuxtSchema({
     //   },
     // }),
   },
-});
+})

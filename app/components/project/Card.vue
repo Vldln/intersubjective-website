@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps<{
   item: {
-    title: string;
-    release: string;
-    image: string;
-    link: string;
-    short: string;
-  };
-}>();
-const img = useImage();
+    title: string
+    release: string
+    image: string
+    link: string
+    short: string
+  }
+}>()
+const img = useImage()
 </script>
 
 <template>
@@ -42,7 +42,10 @@ const img = useImage();
           <div
             class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-white/30"
           >
-            <UIcon name="heroicons:arrow-right" class="size-3 text-white" />
+            <UIcon
+              name="heroicons:arrow-right"
+              class="size-3 text-white"
+            />
           </div>
         </div>
         <div class="text-xs text-white/90 mb-2 h-16">

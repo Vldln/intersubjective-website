@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps<{
   item: {
-    title: string;
-    image: string;
-    link: string;
-    position: string;
-    status: string;
-  };
-}>();
-const img = useImage();
+    title: string
+    image: string
+    link: string
+    position: string
+    status: string
+  }
+}>()
+const img = useImage()
 </script>
 
 <template>

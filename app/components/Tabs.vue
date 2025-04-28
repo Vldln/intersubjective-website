@@ -1,24 +1,19 @@
 <script setup lang="ts">
-const props = defineProps<{
-  component: Component;
-  items: Array<any>;
-}>();
-
 const ui = {
-  root: "flex items-center gap-4 w-full",
-  list: "relative flex bg-transparent dark:bg-transparent",
-  content: "mt-8",
+  root: 'flex items-center gap-4 w-full',
+  list: 'relative flex bg-transparent dark:bg-transparent',
+  content: 'mt-8',
   indicator:
-    "absolute top-[4px] duration-200 ease-out focus:outline-none bg-white dark:bg-neutral-900",
+    'absolute top-[4px] duration-200 ease-out focus:outline-none bg-white dark:bg-neutral-900',
   trigger:
-    "rounded-none text-lg relative inline-flex cursor-pointer items-center justify-center flex-shrink-0 focus:outline-none transition-colors duration-200 ease-out border-purple-900/30 border-b-4" +
-    " px-3 py-2 font-medium" +
-    " hover:bg-neutral-900/80" +
-    " data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white" +
-    " data-[state=inactive]:text-neutral-500 dark:data-[state=inactive]:text-neutral-400",
+    'rounded-none text-lg relative inline-flex cursor-pointer items-center justify-center flex-shrink-0 focus:outline-none transition-colors duration-200 ease-out border-purple-900/30 border-b-4'
+    + ' px-3 py-2 font-medium'
+    + ' hover:bg-neutral-900/80'
+    + ' data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white'
+    + ' data-[state=inactive]:text-neutral-500 dark:data-[state=inactive]:text-neutral-400',
 
-  label: "truncate",
-};
+  label: 'truncate',
+}
 </script>
 
 <template>
@@ -28,15 +23,19 @@ const ui = {
         <slot name="title" />
       </h3>
     </div>
-    <UTabs :items orientation="horizontal" :ui="ui">
+    <UTabs
+      :items
+      orientation="horizontal"
+      :ui="ui"
+    >
       <template #content="{ item }">
         <div
           class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3"
         >
           <component
+            :is="component"
             v-for="i in item.items"
             :key="i.title"
-            :is="component"
             :item="i"
           />
         </div>

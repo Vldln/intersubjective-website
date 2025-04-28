@@ -1,17 +1,17 @@
-import { Resend } from "resend";
-import type { H3Event } from "h3";
+import { Resend } from 'resend'
+import type { H3Event } from 'h3'
 
-const resend = new Resend(process.env.NUXT_PRIVATE_RESEND_API_KEY);
+const resend = new Resend(process.env.NUXT_PRIVATE_RESEND_API_KEY)
 
 export default defineEventHandler(async (event: H3Event) => {
   try {
-    const body = await readBody(event);
-    const config = useRuntimeConfig();
-    const { email, subject, message } = body;
+    const body = await readBody(event)
+    const config = useRuntimeConfig()
+    const { email, subject, message } = body
     return await resend.emails.send({
-      from: "Intersubjective <contact@intersubjective.space>",
+      from: 'Intersubjective <contact@intersubjective.space>',
       to: [config.public.contactEmail as string],
-      subject: "New message from Intersubjective",
+      subject: 'New message from Intersubjective',
       html: `
       <p>A new message has been sent from the contact form of Intersubjective.</p>
       <p>Here are the details of the message :</p>
@@ -21,8 +21,9 @@ export default defineEventHandler(async (event: H3Event) => {
         <li>Message : ${message}</li>
       </ul>
       `,
-    });
-  } catch (error) {
-    return { error };
+    })
   }
-});
+  catch (error) {
+    return { error }
+  }
+})

@@ -8,7 +8,7 @@ defineProps({
     type: String,
     required: true,
   },
-});
+})
 </script>
 
 <template>
@@ -29,7 +29,10 @@ defineProps({
         <div
           class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md"
         >
-          <UIcon name="heroicons:arrow-right" class="size-3" />
+          <UIcon
+            name="heroicons:arrow-right"
+            class="size-3"
+          />
         </div>
       </div>
     </div>
