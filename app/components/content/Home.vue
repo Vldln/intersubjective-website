@@ -1,8 +1,63 @@
 <script setup lang="ts">
-onMounted(() => {
-  console.log("a", tsParticles);
+import { useWindowSize } from "@vueuse/core";
+import { useScroll } from "@vueuse/core";
 
-  // Загружаем фоновые частицы
+const { width } = useWindowSize();
+const { y } = useScroll();
+
+const isMobile = computed(() => width.value < 768);
+
+const isScrolled = computed(() => y.value > 100);
+
+const particlesActive = ref(true);
+
+const stopParticles = () => {
+  const backgroundContainer = document.getElementById("background-particles");
+  const logoContainer = document.getElementById("tsparticles");
+
+  if (backgroundContainer) {
+    const backgroundInstance = tsParticles.domItem(backgroundContainer);
+    if (backgroundInstance) backgroundInstance.pause();
+  }
+
+  if (logoContainer) {
+    const logoInstance = tsParticles.domItem(logoContainer);
+    if (logoInstance) logoInstance.pause();
+  }
+
+  particlesActive.value = false;
+};
+
+const startParticles = () => {
+  const backgroundContainer = document.getElementById("background-particles");
+  const logoContainer = document.getElementById("tsparticles");
+
+  if (backgroundContainer) {
+    const backgroundInstance = tsParticles.domItem(backgroundContainer);
+    if (backgroundInstance) backgroundInstance.play();
+  }
+
+  if (logoContainer) {
+    const logoInstance = tsParticles.domItem(logoContainer);
+    if (logoInstance) logoInstance.play();
+  }
+
+  particlesActive.value = true;
+};
+
+watch(isScrolled, (scrolled) => {
+  if (scrolled && particlesActive.value) {
+    stopParticles();
+  } else if (!scrolled && !particlesActive.value) {
+    startParticles();
+  }
+});
+
+onMounted(() => {
+  const particleCount = isMobile.value ? 30 : 50;
+  const logoParticleCount = isMobile.value ? 80 : 120;
+  const fpsLimit = isMobile.value ? 30 : 60;
+
   tsParticles.load({
     id: "background-particles",
     options: {
@@ -16,22 +71,22 @@ onMounted(() => {
         opacity: 1,
       },
       fullScreen: { enable: false },
-      detectRetina: true,
-      fpsLimit: 120,
+      detectRetina: false,
+      fpsLimit: fpsLimit,
       interactivity: {
-        detectsOn: "window",
+        detectsOn: "canvas",
         events: {
-          onClick: { enable: true, mode: "push" },
+          onClick: { enable: !isMobile.value, mode: "push" },
           onHover: {
-            enable: true,
+            enable: !isMobile.value,
             mode: "repulse",
             parallax: { enable: false, force: 2, smooth: 10 },
           },
           resize: { delay: 0.5, enable: true },
         },
         modes: {
-          push: { quantity: 4 },
-          repulse: { distance: 200, duration: 0.4 },
+          push: { quantity: 2 },
+          repulse: { distance: 100, duration: 0.4 },
         },
       },
       particles: {
@@ -48,10 +103,10 @@ onMounted(() => {
           enable: true,
           outModes: { default: "out" },
           random: false,
-          speed: 2,
+          speed: 1,
           straight: false,
         },
-        number: { density: { enable: true, area: 800 }, value: 80 },
+        number: { density: { enable: true, area: 800 }, value: particleCount },
         opacity: { value: { min: 0.1, max: 0.5 } },
         shape: { type: "circle" },
         size: { value: { min: 1, max: 3 } },
@@ -59,82 +114,82 @@ onMounted(() => {
     },
   });
 
-  // Загружаем частицы с маской логотипа
-  tsParticles.load({
-    id: "tsparticles",
-    options: {
-      autoPlay: true,
-      background: {
-        color: { value: "transparent" },
-        opacity: 0,
-      },
-      fullScreen: { enable: false },
-      detectRetina: true,
-      fpsLimit: 120,
-      interactivity: {
-        detectsOn: "window",
-        events: {
-          onClick: { enable: false, mode: "push" },
-          onHover: {
-            enable: true,
-            mode: "bubble",
-            parallax: { enable: false, force: 2, smooth: 10 },
-          },
-          resize: { delay: 0.5, enable: true },
+  if (!isMobile.value || width.value >= 640) {
+    tsParticles.load({
+      id: "tsparticles",
+      options: {
+        autoPlay: true,
+        background: {
+          color: { value: "transparent" },
+          opacity: 0,
         },
-        modes: {
-          bubble: {
-            distance: 40,
-            duration: 2,
-            opacity: 8,
-            size: 6,
+        fullScreen: { enable: false },
+        detectRetina: false,
+        fpsLimit: fpsLimit,
+        interactivity: {
+          detectsOn: "canvas",
+          events: {
+            onClick: { enable: false },
+            onHover: {
+              enable: !isMobile.value,
+              mode: "bubble",
+              parallax: { enable: false },
+            },
+            resize: { delay: 0.5, enable: true },
+          },
+          modes: {
+            bubble: {
+              distance: 40,
+              duration: 2,
+              opacity: 8,
+              size: 6,
+            },
           },
         },
-      },
-      particles: {
-        color: { value: "#ffffff" },
-        links: {
+        particles: {
           color: { value: "#ffffff" },
-          distance: 30,
-          enable: true,
-          opacity: 0.4,
-          width: 1,
-        },
-        move: {
-          direction: "none",
-          enable: true,
-          outModes: { default: "bounce" },
-          random: false,
-          speed: 1,
-          straight: false,
-        },
-        number: { value: 200 },
-        opacity: {
-          value: { min: 0.05, max: 0.4 },
-          animation: {
+          links: {
+            color: { value: "#ffffff" },
+            distance: 30,
             enable: true,
-            speed: 2,
-            sync: false,
+            opacity: 0.4,
+            width: 1,
           },
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: { default: "bounce" },
+            random: false,
+            speed: 0.5,
+            straight: false,
+          },
+          number: { value: logoParticleCount },
+          opacity: {
+            value: { min: 0.05, max: 0.4 },
+            animation: {
+              enable: true,
+              speed: 1,
+              sync: false,
+            },
+          },
+          shape: { type: "circle" },
+          size: { value: 1 },
         },
-        shape: { type: "circle" },
-        size: { value: 1 },
-      },
-      polygon: {
-        draw: {
+        polygon: {
+          draw: {
+            enable: true,
+            stroke: { color: { value: "#fff" }, width: 1, opacity: 0.2 },
+          },
           enable: true,
-          stroke: { color: { value: "#fff" }, width: 1, opacity: 0.2 },
+          move: { radius: 10, type: "path" },
+          scale: 0.5,
+          type: "inline",
+          url: "/logo.svg",
+          position: { x: 50, y: 50 },
         },
-        enable: true,
-        move: { radius: 10, type: "path" },
-        scale: 0.5,
-        type: "inline",
-        url: "/logo.svg",
-        position: { x: 50, y: 50 },
       },
-    },
-  });
-  console.log("ab");
+    });
+  }
 });
 </script>
 

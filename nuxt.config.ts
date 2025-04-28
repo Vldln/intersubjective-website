@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "@nuxtjs/color-mode",
-    //"nuxt-particles",
+    "@nuxtjs/sitemap",
   ],
 
   app: {
