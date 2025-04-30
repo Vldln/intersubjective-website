@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps<{
   item: {
-    title: string
-    release: string
-    image: string
-    link: string
-    short: string
-  }
-}>()
-const img = useImage()
+    title: string;
+    release: string;
+    image: string;
+    link: string;
+    short: string;
+  };
+}>();
+const img = useImage();
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const img = useImage()
   >
     <div class="flex h-70 justify-center overflow-hidden rounded-lg">
       <NuxtImg
-        :placeholder="img(`${item.image ?? `project_placeholder.webp`}`)"
+        :placeholder="`${item.image ?? `project_placeholder.webp`}`"
         width="1536"
         :alt="item.title + ' project image'"
         class="h-full rounded-lg object-cover transition-all duration-300 hover:scale-105 grayscale hover:grayscale-0"
@@ -42,13 +42,10 @@ const img = useImage()
           <div
             class="flex items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-white/30"
           >
-            <UIcon
-              name="heroicons:arrow-right"
-              class="size-3 text-white"
-            />
+            <UIcon name="heroicons:arrow-right" class="size-3 text-white" />
           </div>
         </div>
-        <div class="text-xs text-white/90 mb-2 h-16">
+        <div class="text-xs text-white/90 mb-2 h-16 overflow-hidden">
           {{ item.short.split(" ").slice(0, 20).join(" ") + "..." }}
         </div>
       </div>
