@@ -1,60 +1,75 @@
-## Features
+# Nuxt Minimal Starter
 
-- **Modern Components & Layouts** – Includes built-in components.
-- **Nuxt UI v3** – Utilize pre-built, customizable UI components.
-- **NuxtHub ready** - Deploy on NuxtHub in seconds.
-- **Tailwind CSS** – A beautiful, responsive design system.
-- **Working Contact Form** – Integrated with Resend for easy email handling.
-- **Multi-language Support** – Powered by Nuxt i18n.
-- **SEO-Ready** – Open Graph Image (Nuxt OG Image) & Nuxt Robots for automatic robots.txt generation.
-- **Good practices** – Auto-generated sitemap, optimized images (Nuxt Image), and ESLint (Nuxt config with Flat config).
-- **Fully Responsive** – Adapts to all modern browsers and devices.
-- **Minimal & Professional Design** – Clean, elegant, and easy to customize.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Quick Setup
+## Setup
 
-1. Clone this repository if you have access or download it from the store
+Make sure to install dependencies:
 
 ```bash
-git clone git@github.com:Vldln/Intersubjective/intersubjective-website.git
-```
+# npm
+npm install
 
-2. Install dependencies
-
-```bash
+# pnpm
 pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-3. Copy the `.env.example` file to `.env` and fill in the values
+## Development Server
+
+Start the development server on `http://localhost:3000`:
 
 ```bash
-cp .env.example .env
-```
+# npm
+npm run dev
 
-4. Start development server
-
-```bash
+# pnpm
 pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-5. Generate static project
+## Production
+
+Build the application for production:
 
 ```bash
-pnpm generate
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
-6. Start production server
+Locally preview production build:
 
 ```bash
-pnpm start
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
 
-## Deployments
-
-### Nuxt Studio [https://nuxt.studio/](https://nuxt.studio/)
-
-Allow edit content, but dont work with ssr. Its mean server routes with email forms dont work.
-
-### Vercel [https://vercel.com/](https://vercel.com/)
-
-Allow work app ssr. Better for main deploy.
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

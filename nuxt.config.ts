@@ -1,32 +1,16 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: "2024-11-01",
   modules: [
     "@vueuse/nuxt",
     "@nuxt/ui",
     "@nuxtjs/i18n",
-    "@nuxtjs/seo",
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/scripts",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/sitemap",
   ],
-
-  app: {
-    head: {
-      script: [
-        {
-          src: "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js",
-          defer: true,
-        },
-      ],
-    },
-  },
-
-  image: {
-    domains: [
-      process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
-    ],
-    format: ["jpg", "jpeg", "png", "webp"],
-  },
-
   imports: {
     presets: [
       {
@@ -35,31 +19,24 @@ export default defineNuxtConfig({
       },
     ],
   },
-
-  devtools: {
-    enabled: true,
+  app: {
+    head: {
+      script: [
+        {
+          src: "https://cdn.jsdelivr.net/npm/@tsparticles/all@3.0.2/tsparticles.all.bundle.min.js",
+          defer: true,
+        },
+      ],
+    },
   },
 
   css: ["~/assets/style/main.css"],
 
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL,
-    defaultLocale: "en",
-    indexable: true,
-  },
-
-  runtimeConfig: {
-    public: {
-      site:
-        process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
-      contactEmail: process.env.CONTACT_EMAIL,
-      resend: !!process.env.NUXT_PRIVATE_RESEND_API_KEY,
-    },
-  },
-
   colorMode: {
     preference: "dark",
     fallback: "dark",
+    classPrefix: "",
+    classSuffix: "",
   },
 
   content: {
@@ -82,6 +59,15 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    public: {
+      site:
+        process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
+      contactEmail: process.env.CONTACT_EMAIL,
+      resend: !!process.env.NUXT_PRIVATE_RESEND_API_KEY,
+    },
+  },
+
   routeRules: {
     // Needed to activate preview on Nuxt Studio
     "/": { prerender: false },
@@ -94,9 +80,6 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
   },
-
-  compatibilityDate: "2025-01-05",
-
   nitro: {
     experimental: {
       websocket: true,
@@ -150,8 +133,11 @@ export default defineNuxtConfig({
     },
     provider: "iconify",
   },
-
-  ogImage: {
-    zeroRuntime: true,
+  image: {
+    domains: [
+      process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
+    ],
+    format: ["jpg", "jpeg", "png", "webp"],
   },
+  devtools: { enabled: true },
 });
