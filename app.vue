@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Toaster } from 'vue-sonner'
-import * as locales from '@nuxt/ui/locale'
-import { useI18n } from 'vue-i18n'
-import LoadingPage from './components/LoadingPage.vue'
+import { Toaster } from "vue-sonner";
+import * as locales from "@nuxt/ui/locale";
+import { useI18n } from "vue-i18n";
+import LoadingPage from "./components/LoadingPage.vue";
 
-const { locale: i18nLocale } = useI18n()
+const { locale: i18nLocale } = useI18n();
 </script>
 
 <template>
@@ -27,7 +27,9 @@ const { locale: i18nLocale } = useI18n()
         </template>
       </Suspense>
       <Toaster :locale="locales[i18nLocale]" />
-      <DotPattern class="absolute inset-0 -z-10 size-full fill-white/5 [mask-image:radial-gradient(white,transparent_85%)]" />
+      <DotPattern
+        class="absolute inset-0 -z-10 size-full fill-white/5 [mask-image:radial-gradient(white,transparent_85%)]"
+      />
     </Body>
   </Html>
 </template>

@@ -1,4 +1,9 @@
 <script setup lang="ts">
+defineProps<{
+  items: any[]
+  component: any
+}>()
+
 const ui = {
   root: 'flex items-center gap-4 w-full',
   list: 'relative flex bg-transparent dark:bg-transparent',
