@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block access to admin area
+Disallow: /admin/
+
+# Optimize crawling rate
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://intersubjective.space/sitemap.xml 

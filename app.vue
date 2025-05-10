@@ -5,6 +5,17 @@ import { useI18n } from "vue-i18n";
 import LoadingPage from "./components/LoadingPage.vue";
 
 const { locale: i18nLocale } = useI18n();
+
+// Добавляем мета-теги для SEO
+useHead({
+  meta: [
+    { name: 'description', content: 'Intersubjective Space - научное и философское сообщество' },
+    { name: 'theme-color', content: '#000000' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ]
+})
 </script>
 
 <template>
@@ -38,5 +49,13 @@ const { locale: i18nLocale } = useI18n();
 html {
   font-family: "Inter", sans-serif;
   transition: color 0.3s ease, background-color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+/* Оптимизация производительности */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 </style>

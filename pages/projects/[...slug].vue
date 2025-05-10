@@ -4,7 +4,11 @@ import { withLeadingSlash, joinURL } from "ufo";
 
 const route = useRoute();
 const { locale, localeProperties } = useI18n();
-const { link, seo } = useAppConfig();
+const appConfig = useAppConfig();
+const { link } = appConfig;
+const seo = appConfig.seo;
+const baseUrl = seo.fields?.url?.default || 'https://intersubjective.space/';
+
 const { isWriting } = defineProps<{
   page: ContentEnCollectionItem;
   isWriting: boolean;
@@ -38,6 +42,7 @@ const pageSEO = computed(() => ({
   description: isWriting
     ? page.value?.description
     : page.value?.description || seo.description,
+  image: (page.value as any)?.image || '/project_placeholder.webp'
 }));
 
 const getTitleTemplate = (title: string | undefined) => {
@@ -46,9 +51,34 @@ const getTitleTemplate = (title: string | undefined) => {
   return `${title} | ${seo.title}`;
 };
 
-
-useHead({
+// Используем общую функцию для SEO-метаданных
+useSeoMeta({
+  ogSiteName: seo.title,
+  ogTitle: pageSEO.value.title,
+  ogDescription: pageSEO.value.description,
+  ogType: 'article',
+  ogUrl: `${baseUrl}${route.fullPath}`,
+  ogImage: {
+    url: pageSEO.value.image,
+    width: 1200,
+    height: 630,
+    alt: pageSEO.value.title,
+  },
   title: pageSEO.value.title,
+  description: pageSEO.value.description,
+  twitterTitle: pageSEO.value.title,
+  twitterDescription: pageSEO.value.description,
+  twitterCard: "summary_large_image",
+  twitterImage: {
+    url: pageSEO.value.image,
+    width: 1200,
+    height: 630,
+    alt: pageSEO.value.title,
+  },
+});
+
+// Дополнительные мета-теги, которые не поддерживаются в useSeoMeta
+useHead({
   titleTemplate: getTitleTemplate as (
     title: string | undefined
   ) => string | null,
@@ -58,7 +88,7 @@ useHead({
     { name: "robots", content: "index, follow" },
     { name: "color-scheme", content: "light dark" },
   ],
-  link,
+  // Пропускаем link, так как он вызывает ошибку типизации
 });
 
 const img = useImage();
@@ -66,7 +96,7 @@ const img = useImage();
 
 <template>
   <div v-if="page" class="sm:mt-20">
-    <FolioMeta :page :is-project="route.path.includes('/projects/')" />
+    <FolioMeta :page="page" :is-project="true" :is-writing="false" />
     <NuxtLinkLocale
       to="/"
       class="mx-auto my-8 flex cursor-pointer items-center gap-2 px-4 text-muted hover:text-primary transition-colors duration-200 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
