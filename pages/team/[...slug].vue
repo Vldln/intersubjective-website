@@ -26,16 +26,12 @@ const { data: page } = await useAsyncData(
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
 
-defineOgImage({
-  url: page.value.image,
-});
-
 const img = useImage();
 </script>
 
 <template>
   <div v-if="page" class="sm:mt-20">
-    <FolioMeta :page :is-team="route.path.includes('/team/')" />
+    <FolioMeta :page="page" :is-team="route.path.includes('/team/')" />
     <NuxtLinkLocale
       to="/"
       class="mx-auto my-8 flex cursor-pointer items-center gap-2 px-4 text-muted hover:text-primary transition-colors duration-200 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"

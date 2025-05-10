@@ -1,13 +1,13 @@
 export default defineAppConfig({
   seo: {
-    title: "SEO",
-    description: "SEO configuration",
+    title: "Intersubjective",
+    description: "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
     icon: "lucide:search",
     fields: {
       title: {
         type: "string",
-        title: "Title",
-        description: "Intersubjective",
+        title: "Intersubjective",
+        description: "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
         icon: "lucide:title",
         default: "Intersubjective",
       },

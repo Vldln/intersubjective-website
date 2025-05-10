@@ -23,11 +23,17 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: "https://cdn.jsdelivr.net/npm/@tsparticles/all@3.0.2/tsparticles.all.bundle.min.js",
+          src: "/tsparticles.all.bundle.min.js",
           defer: true,
         },
       ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+      ],
     },
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' }
   },
 
   css: ["~/assets/style/main.css"],
@@ -69,8 +75,8 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // Needed to activate preview on Nuxt Studio
     "/": { prerender: false },
+    '/public/**': { cache: { maxAge: 60 * 60 * 24 * 30 } },
   },
 
   future: {
@@ -79,6 +85,7 @@ export default defineNuxtConfig({
 
   experimental: {
     viewTransition: true,
+    renderJsonPayloads: true,
   },
   nitro: {
     experimental: {
@@ -89,6 +96,7 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ["/"],
     },
+    compressPublicAssets: true,
   },
 
   hooks: {
@@ -133,11 +141,11 @@ export default defineNuxtConfig({
     },
     provider: "iconify",
   },
-  image: {
-    domains: [
-      process.env.NUXT_PUBLIC_SITE_URL || "https://intersubjective.space/",
-    ],
-    format: ["jpg", "jpeg", "png", "webp"],
+  
+  sitemap: {
+    autoLastmod: true,
+    xsl: false,
   },
+  
   devtools: { enabled: true },
 });
