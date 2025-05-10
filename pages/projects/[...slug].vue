@@ -4,11 +4,6 @@ import { withLeadingSlash, joinURL } from "ufo";
 
 const route = useRoute();
 const { locale, localeProperties } = useI18n();
-const appConfig = useAppConfig();
-const { link } = appConfig;
-const seo = appConfig.seo;
-const baseUrl = seo.fields?.url?.default || 'https://intersubjective.space/';
-
 const { isWriting } = defineProps<{
   page: ContentEnCollectionItem;
   isWriting: boolean;
@@ -36,60 +31,6 @@ const { data: page } = await useAsyncData(
 
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
-
-const pageSEO = computed(() => ({
-  title: isWriting ? page.value?.title : page.value?.title || seo.title,
-  description: isWriting
-    ? page.value?.description
-    : page.value?.description || seo.description,
-  image: (page.value as any)?.image || '/project_placeholder.webp'
-}));
-
-const getTitleTemplate = (title: string | undefined) => {
-  if (route.path === "/") return title || `${seo.title}`;
-  if (isWriting) return title;
-  return `${title} | ${seo.title}`;
-};
-
-// Используем общую функцию для SEO-метаданных
-useSeoMeta({
-  ogSiteName: seo.title,
-  ogTitle: pageSEO.value.title,
-  ogDescription: pageSEO.value.description,
-  ogType: 'article',
-  ogUrl: `${baseUrl}${route.fullPath}`,
-  ogImage: {
-    url: pageSEO.value.image,
-    width: 1200,
-    height: 630,
-    alt: pageSEO.value.title,
-  },
-  title: pageSEO.value.title,
-  description: pageSEO.value.description,
-  twitterTitle: pageSEO.value.title,
-  twitterDescription: pageSEO.value.description,
-  twitterCard: "summary_large_image",
-  twitterImage: {
-    url: pageSEO.value.image,
-    width: 1200,
-    height: 630,
-    alt: pageSEO.value.title,
-  },
-});
-
-// Дополнительные мета-теги, которые не поддерживаются в useSeoMeta
-useHead({
-  titleTemplate: getTitleTemplate as (
-    title: string | undefined
-  ) => string | null,
-  meta: [
-    { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-    { name: "charset", content: "utf-8" },
-    { name: "robots", content: "index, follow" },
-    { name: "color-scheme", content: "light dark" },
-  ],
-  // Пропускаем link, так как он вызывает ошибку типизации
-});
 
 const img = useImage();
 </script>

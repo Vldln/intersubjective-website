@@ -10,6 +10,7 @@ const props = defineProps<{
 const route = useRoute();
 const appConfig = useAppConfig();
 const seo = appConfig.seo;
+const { locale } = useI18n();
 const baseUrl = seo.fields?.url?.default || 'https://intersubjective.space/';
 
 const pageSEO = computed(() => ({
@@ -31,22 +32,31 @@ const getTitleTemplate = (title: string | undefined) => {
 
 // Используем useSeoMeta для установки всех метаданных
 useSeoMeta({
+  // Основные мета-теги
+  title: pageSEO.value.title,
+  description: pageSEO.value.description,
+  
+  // Open Graph (Facebook, LinkedIn)
   ogSiteName: seo.title,
   ogTitle: pageSEO.value.title,
   ogDescription: pageSEO.value.description,
   ogType: props.isProject || props.isTeam ? "article" : "website",
   ogUrl: `${baseUrl}${route.fullPath}`,
+  ogLocale: locale.value,
   ogImage: {
     url: pageSEO.value.image,
     width: 1200,
     height: 630,
     alt: pageSEO.value.title,
+    type: 'image/jpeg',
   },
-  title: pageSEO.value.title,
-  description: pageSEO.value.description,
+  
+  // Twitter
   twitterTitle: pageSEO.value.title,
   twitterDescription: pageSEO.value.description,
   twitterCard: "summary_large_image",
+  twitterCreator: "@intersubjective", // Замените на ваш Twitter аккаунт
+  twitterSite: "@intersubjective", // Замените на ваш Twitter аккаунт
   twitterImage: {
     url: pageSEO.value.image,
     width: 1200,
@@ -55,17 +65,20 @@ useSeoMeta({
   },
 });
 
-// Дополнительные мета-теги
+// Дополнительные мета-теги, которые не дублируются в app.vue
 useHead({
   titleTemplate: getTitleTemplate as (
     title: string | undefined
   ) => string | null,
   meta: [
-    { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-    { name: "charset", content: "utf-8" },
+    // Удалены дублирующие теги viewport и charset, так как они в app.vue
     { name: "robots", content: "index, follow" },
     { name: "color-scheme", content: "light dark" },
   ],
+  // Добавляем канонический URL для улучшения SEO
+  link: [
+    { rel: "canonical", href: `${baseUrl}${route.fullPath}` }
+  ]
 });
 </script>
 
