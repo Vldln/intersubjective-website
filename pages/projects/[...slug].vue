@@ -1,9 +1,14 @@
 <script lang="ts" setup>
-import type { Collections } from "@nuxt/content";
+import type { Collections, ContentEnCollectionItem } from "@nuxt/content";
 import { withLeadingSlash, joinURL } from "ufo";
 
 const route = useRoute();
 const { locale, localeProperties } = useI18n();
+const { link, seo } = useAppConfig();
+const { isWriting } = defineProps<{
+  page: ContentEnCollectionItem;
+  isWriting: boolean;
+}>();
 
 const slug = computed(() =>
   Array.isArray(route.params.slug)
@@ -27,6 +32,34 @@ const { data: page } = await useAsyncData(
 
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
+
+const pageSEO = computed(() => ({
+  title: isWriting ? page.value?.title : page.value?.title || seo.title,
+  description: isWriting
+    ? page.value?.description
+    : page.value?.description || seo.description,
+}));
+
+const getTitleTemplate = (title: string | undefined) => {
+  if (route.path === "/") return title || `${seo.title}`;
+  if (isWriting) return title;
+  return `${title} | ${seo.title}`;
+};
+
+
+useHead({
+  title: pageSEO.value.title,
+  titleTemplate: getTitleTemplate as (
+    title: string | undefined
+  ) => string | null,
+  meta: [
+    { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+    { name: "charset", content: "utf-8" },
+    { name: "robots", content: "index, follow" },
+    { name: "color-scheme", content: "light dark" },
+  ],
+  link,
+});
 
 const img = useImage();
 </script>
