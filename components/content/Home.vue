@@ -1,14 +1,17 @@
 <script setup lang="ts">
+
 import { useWindowSize, useScroll } from "@vueuse/core";
 
-const { width } = useWindowSize();
+const { width, height } = useWindowSize(); // Get width and height
 const { y } = useScroll();
 
 const isMobile = computed(() => width.value < 768);
-
 const isScrolled = computed(() => y.value > 100);
 
 const particlesActive = ref(true);
+
+// Define a constant density (e.g., 0.001 particles per pixel)
+const PARTICLE_DENSITY = 0.0001; // You can tune this number
 
 const stopParticles = () => {
   const backgroundContainer = document.getElementById("background-particles");
@@ -53,114 +56,64 @@ watch(isScrolled, (scrolled) => {
 });
 
 onMounted(() => {
-  const particleCount = isMobile.value ? 30 : 50;
-  const logoParticleCount = isMobile.value ? 80 : 120;
-  const fpsLimit = isMobile.value ? 30 : 60;
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const screenArea = screenWidth * screenHeight;
+
+  // Total number of particles based on area
+  const totalParticles = Math.round(screenArea * PARTICLE_DENSITY);
+
+  const farCount = Math.round(totalParticles * 0.6);
+  const midCount = Math.round(totalParticles * 0.3);
+  const nearCount = totalParticles - farCount - midCount;
 
   tsParticles.load({
     id: "background-particles",
     options: {
       autoPlay: true,
       background: {
-        color: {
-          value: "#000000",
-        },
+        color: { value: "#000000" },
       },
       fullScreen: {
         enable: false,
         zIndex: 0,
       },
       detectRetina: true,
-      fpsLimit: 120,
+      fpsLimit: isMobile.value ? 30 : 60,
       particles: {
         number: {
-          value: 1000, // the overall number of particles
+          value: totalParticles,
         },
         groups: {
           far: {
-            number: {
-              value: 600,
-            },
-            move: {
-              speed: 1.2,
-            },
-            size: {
-              value: {
-                min: 1,
-                max: 2,
-              },
-            },
-            opacity: {
-              value: 0.5,
-            },
+            number: { value: farCount },
+            move: { speed: 1.2 },
+            size: { value: { min: 1, max: 2 } },
+            opacity: { value: 0.5 },
           },
           mid: {
-            number: {
-              value: 300,
-            },
-            move: {
-              speed: 5,
-            },
-            size: {
-              value: {
-                min: 1,
-                max: 2.5,
-              },
-            },
-            opacity: {
-              value: 0.7,
-            },
+            number: { value: midCount },
+            move: { speed: 5 },
+            size: { value: { min: 1, max: 2.5 } },
+            opacity: { value: 0.7 },
           },
           near: {
-            number: {
-              value: 100,
-            },
-            move: {
-              speed: 12,
-            },
-            size: {
-              value: {
-                min: 2,
-                max: 3,
-              },
-            },
-            opacity: {
-              value: 1,
-            },
+            number: { value: nearCount },
+            move: { speed: 12 },
+            size: { value: { min: 2, max: 3 } },
+            opacity: { value: 1 },
           },
         },
-        color: {
-          value: "#ffffff",
-        },
-        shape: {
-          type: "circle",
-        },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
         move: {
           enable: true,
           direction: "bottom",
           straight: true,
-          outModes: {
-            default: "out",
-          },
+          outModes: { default: "out" },
         },
-        links: {
-          enable: false,
-        },
+        links: { enable: false },
       },
-      manualParticles: [
-        {
-          group: "far",
-          quantity: 600,
-        },
-        {
-          group: "mid",
-          quantity: 300,
-        },
-        {
-          group: "near",
-          quantity: 100,
-        },
-      ],
       interactivity: {
         detectsOn: "window",
         events: {
@@ -176,9 +129,7 @@ onMounted(() => {
         modes: {
           grab: {
             distance: 200,
-            links: {
-              opacity: 0.5,
-            },
+            links: { opacity: 0.5 },
           },
         },
       },
@@ -188,6 +139,9 @@ onMounted(() => {
     },
   });
 });
+
+
+
 </script>
 
 <template>
