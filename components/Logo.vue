@@ -17,7 +17,7 @@ defineProps({
   >
     <NuxtImg
       src="/logo.svg"
-      class="transition-all duration-300 hover:scale-105"
+      class="transition-all duration-300 scale-250 opacity-85 hover:opacity-100 hover:scale-280"
     />
     <span
       v-if="isText"

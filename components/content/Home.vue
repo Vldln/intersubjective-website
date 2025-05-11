@@ -74,15 +74,15 @@ onMounted(() => {
       fpsLimit: 120,
       particles: {
         number: {
-          value: 100,
+          value: 1000, // the overall number of particles
         },
         groups: {
           far: {
             number: {
-              value: 100,
+              value: 600,
             },
             move: {
-              speed: 2,
+              speed: 1.2,
             },
             size: {
               value: {
@@ -96,7 +96,7 @@ onMounted(() => {
           },
           mid: {
             number: {
-              value: 0,
+              value: 300,
             },
             move: {
               speed: 5,
@@ -116,7 +116,7 @@ onMounted(() => {
               value: 100,
             },
             move: {
-              speed: 10,
+              speed: 12,
             },
             size: {
               value: {
@@ -150,15 +150,15 @@ onMounted(() => {
       manualParticles: [
         {
           group: "far",
-          quantity: 100,
+          quantity: 600,
         },
         {
           group: "mid",
-          quantity: 150,
+          quantity: 300,
         },
         {
           group: "near",
-          quantity: 300,
+          quantity: 100,
         },
       ],
       interactivity: {
@@ -167,11 +167,6 @@ onMounted(() => {
           onHover: {
             enable: true,
             mode: "grab",
-            parallax: {
-              enable: true,
-              force: 20,
-              smooth: 10,
-            },
           },
           resize: {
             delay: 0.5,
@@ -180,7 +175,7 @@ onMounted(() => {
         },
         modes: {
           grab: {
-            distance: 140,
+            distance: 200,
             links: {
               opacity: 0.5,
             },
@@ -192,64 +187,6 @@ onMounted(() => {
       smooth: true,
     },
   });
-
-  if (!isMobile.value || width.value >= 640) {
-    tsParticles.load({
-      id: "tsparticles",
-      options: {
-        autoPlay: true,
-        background: {
-          color: { value: "transparent" },
-          opacity: 0,
-        },
-        fullScreen: { enable: false },
-        detectRetina: false,
-        fpsLimit: fpsLimit,
-
-        particles: {
-          color: { value: "#ffffff" },
-          links: {
-            color: { value: "#ffffff" },
-            distance: 30,
-            enable: true,
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            direction: "none",
-            enable: true,
-            outModes: { default: "bounce" },
-            random: false,
-            speed: 0.5,
-            straight: false,
-          },
-          number: { value: logoParticleCount },
-          opacity: {
-            value: { min: 0.05, max: 0.4 },
-            animation: {
-              enable: true,
-              speed: 1,
-              sync: false,
-            },
-          },
-          shape: { type: "circle" },
-          size: { value: 1 },
-        },
-        polygon: {
-          draw: {
-            enable: true,
-            stroke: { color: { value: "#fff" }, width: 1, opacity: 0.2 },
-          },
-          enable: true,
-          move: { radius: 10, type: "path" },
-          scale: 0.5,
-          type: "inline",
-          url: "/logo.svg",
-          position: { x: 50, y: 50 },
-        },
-      },
-    });
-  }
 });
 </script>
 
