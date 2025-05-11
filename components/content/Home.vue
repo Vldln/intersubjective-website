@@ -67,7 +67,7 @@ onMounted(() => {
   const midCount = Math.round(totalParticles * 0.3);
   const nearCount = totalParticles - farCount - midCount;
   
-  const basicSpeed = 0.2 * (isMobile.value ? 0.5: 1.0); //to adjust to lower fps
+  const basicSpeed = 0.3 * (isMobile.value ? 0.5: 1.0); //to adjust to lower fps
 
   tsParticles.load({
     id: "background-particles",
