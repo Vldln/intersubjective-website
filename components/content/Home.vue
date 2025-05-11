@@ -66,6 +66,8 @@ onMounted(() => {
   const farCount = Math.round(totalParticles * 0.6);
   const midCount = Math.round(totalParticles * 0.3);
   const nearCount = totalParticles - farCount - midCount;
+  
+  const basicSpeed = 0.2 * (isMobile.value ? 0.5: 1.0); //to adjust to lower fps
 
   tsParticles.load({
     id: "background-particles",
@@ -87,19 +89,19 @@ onMounted(() => {
         groups: {
           far: {
             number: { value: farCount },
-            move: { speed: 1.2 },
+            move: { speed: basicSpeed * 1.2 },
             size: { value: { min: 1, max: 2 } },
             opacity: { value: 0.5 },
           },
           mid: {
             number: { value: midCount },
-            move: { speed: 5 },
+            move: { speed:  basicSpeed * 5 },
             size: { value: { min: 1, max: 2.5 } },
             opacity: { value: 0.7 },
           },
           near: {
             number: { value: nearCount },
-            move: { speed: 12 },
+            move: { speed:  basicSpeed * 12 },
             size: { value: { min: 2, max: 3 } },
             opacity: { value: 1 },
           },
