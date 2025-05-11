@@ -25,6 +25,7 @@
     "locale": "link:@nuxt/ui/locale",
     "nuxt": "^3.17.1",
     "postcss": "^8.5.3",
+    "resend": "^4.5.1",
     "tailwindcss": "^4.1.5",
     "typescript": "^5.8.3",
     "vue": "^3.5.13",
