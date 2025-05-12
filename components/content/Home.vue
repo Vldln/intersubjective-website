@@ -8,7 +8,12 @@ const { y } = useScroll();
 const isMobile = computed(() => width.value < 768);
 const isScrolled = computed(() => y.value > 100);
 
+
 const particlesActive = ref(true);
+const linksEnabled = ref(false);
+
+
+
 
 // Define a constant density (e.g., 0.001 particles per pixel)
 const PARTICLE_DENSITY = 0.0001; // You can tune this number
@@ -54,6 +59,18 @@ watch(isScrolled, (scrolled) => {
     startParticles();
   }
 });
+
+
+const toggleParticleLinks = (enabled) => {
+    const instances = tsParticles.dom();
+    if (instances.length === 0) {
+      console.warn("No tsParticles instances found.");
+    } else {
+      const instance = instances[0];
+      instance.options.particles.links.enable = !instance.options.particles.links.enable;
+      instance.refresh();
+    }
+};
 
 onMounted(() => {
   const screenWidth = window.innerWidth;
@@ -114,8 +131,13 @@ onMounted(() => {
           straight: true,
           outModes: { default: "out" },
         },
-        links: { enable: false },
-      },
+links: {
+  enable: false, // Start with no links
+  distance: 200,
+  color: "#ffffff",
+  opacity: 0.4,
+  width: 1
+}      },
       interactivity: {
         detectsOn: "window",
         events: {
@@ -154,7 +176,9 @@ onMounted(() => {
       class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0 pointer-events-none"
       data-animate
     >
-      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto" />
+      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto" 
+      @click="toggleParticleLinks"  
+      />
       <div
         class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center pointer-events-auto"
       >
