@@ -8,7 +8,12 @@ const { y } = useScroll();
 const isMobile = computed(() => width.value < 768);
 const isScrolled = computed(() => y.value > 100);
 
+
 const particlesActive = ref(true);
+const linksEnabled = ref(false);
+
+
+
 
 // Define a constant density (e.g., 0.001 particles per pixel)
 const PARTICLE_DENSITY = 0.0001; // You can tune this number
@@ -54,6 +59,40 @@ watch(isScrolled, (scrolled) => {
     startParticles();
   }
 });
+
+
+const toggleParticleLinks = async () => {
+  const instance = tsParticles.dom()[0];
+
+  if (!instance?.options?.particles?.links) {
+    console.warn("Links option not found.");
+    return;
+  }
+
+  flashTransitionOverlay(); // Trigger the flash effect
+
+  // Delay slightly to sync with visual effect
+  await new Promise(resolve => setTimeout(resolve, 200));
+
+  instance.options.particles.links.enable = !instance.options.particles.links.enable;
+  instance.refresh();
+};
+
+
+
+
+const flashTransitionOverlay = () => {
+  const overlay = document.getElementById("particle-transition-overlay");
+  if (!overlay) return;
+
+  overlay.classList.remove("flash"); // reset if previously applied
+
+  // Trigger reflow to restart animation
+  void overlay.offsetWidth;
+
+  overlay.classList.add("flash");
+};
+
 
 onMounted(() => {
   const screenWidth = window.innerWidth;
@@ -114,8 +153,13 @@ onMounted(() => {
           straight: true,
           outModes: { default: "out" },
         },
-        links: { enable: false },
-      },
+links: {
+  enable: false, // Start with no links
+  distance: 200,
+  color: "#ffffff",
+  opacity: 0.4,
+  width: 1
+}      },
       interactivity: {
         detectsOn: "window",
         events: {
@@ -151,10 +195,16 @@ onMounted(() => {
     <div id="background-particles" class="absolute w-full h-screen" />
     <div id="tsparticles" class="absolute w-full h-screen z-0" />
     <div
+      id="particle-transition-overlay"
+      class="fixed inset-0 z-[999] pointer-events-none"
+    ></div>
+    <div
       class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0 pointer-events-none"
       data-animate
     >
-      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto" />
+      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto" 
+      @click="toggleParticleLinks"  
+      />
       <div
         class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center pointer-events-auto"
       >

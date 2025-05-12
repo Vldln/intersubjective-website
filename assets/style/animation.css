@@ -64,3 +64,22 @@
 [data-animation-controller="false"] [data-animate] {
   animation: none;
 }
+
+
+@keyframes flash-fade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#particle-transition-overlay.flash {
+  background: white;
+  animation: flash-fade 500ms ease-in-out forwards;
+}
+
