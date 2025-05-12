@@ -61,16 +61,38 @@ watch(isScrolled, (scrolled) => {
 });
 
 
-const toggleParticleLinks = (enabled) => {
-    const instances = tsParticles.dom();
-    if (instances.length === 0) {
-      console.warn("No tsParticles instances found.");
-    } else {
-      const instance = instances[0];
-      instance.options.particles.links.enable = !instance.options.particles.links.enable;
-      instance.refresh();
-    }
+const toggleParticleLinks = async () => {
+  const instance = tsParticles.dom()[0];
+
+  if (!instance?.options?.particles?.links) {
+    console.warn("Links option not found.");
+    return;
+  }
+
+  flashTransitionOverlay(); // Trigger the flash effect
+
+  // Delay slightly to sync with visual effect
+  await new Promise(resolve => setTimeout(resolve, 200));
+
+  instance.options.particles.links.enable = !instance.options.particles.links.enable;
+  instance.refresh();
 };
+
+
+
+
+const flashTransitionOverlay = () => {
+  const overlay = document.getElementById("particle-transition-overlay");
+  if (!overlay) return;
+
+  overlay.classList.remove("flash"); // reset if previously applied
+
+  // Trigger reflow to restart animation
+  void overlay.offsetWidth;
+
+  overlay.classList.add("flash");
+};
+
 
 onMounted(() => {
   const screenWidth = window.innerWidth;
@@ -172,6 +194,10 @@ links: {
   <section class="relative">
     <div id="background-particles" class="absolute w-full h-screen" />
     <div id="tsparticles" class="absolute w-full h-screen z-0" />
+    <div
+      id="particle-transition-overlay"
+      class="fixed inset-0 z-[999] pointer-events-none"
+    ></div>
     <div
       class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0 pointer-events-none"
       data-animate
