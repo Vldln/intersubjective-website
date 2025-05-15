@@ -1,9 +1,9 @@
 name: Build and Push Intersubjective Website Docker Image
 
 on:
-  push:
-    tags:
-      - "v*"
+  #push:
+  #  tags:
+  #    - "v*"
   workflow_dispatch:
     inputs:
       tag:
