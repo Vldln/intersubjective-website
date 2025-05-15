@@ -1,31 +1,31 @@
+const description = "Intersubjective is a leading TrustTech, Web3, and R&D company based in the Netherlands, specializing in innovative blockchain solutions and cutting-edge social technology research.";
+
 export default defineAppConfig({
   seo: {
     title: "Intersubjective",
-    description: "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
+    description,
     icon: "lucide:search",
     fields: {
       title: {
         type: "string",
         title: "Intersubjective",
-        description: "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
+        description,
         icon: "lucide:title",
         default: "Intersubjective",
       },
       description: {
         type: "string",
         title: "Description",
-        description:
-          "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
+        description,
         icon: "lucide:description",
-        default:
-          "Intersubjective is a web3 and sociotech R&D company based in the Netherlands.",
+        default: description,
       },
       url: {
         type: "string",
         title: "URL",
-        description: "http://vldln-intersubjective-website.nuxt.space/",
+        description: "https://intersubjective.space/",
         icon: "lucide:link",
-        default: "http://vldln-intersubjective-website.nuxt.space/",
+        default: "https://intersubjective.space/",
       },
       lang: {
         type: "string",
@@ -35,8 +35,30 @@ export default defineAppConfig({
         default: "en",
         required: ["en"],
       },
+      keywords: {
+        type: "string",
+        title: "Keywords",
+        description: "Comma-separated keywords for SEO",
+        icon: "lucide:tag",
+        default: "MeritRank, Tentura, TrustTech, Web3, blockchain, Netherlands",
+      },
+      image: {
+        type: "string",
+        title: "Default OG Image",
+        description: "Default Open Graph image for social sharing",
+        icon: "lucide:image",
+        default: "https://intersubjective.space/og-image.jpg",
+      },
+      canonicalUrl: {
+        type: "string",
+        title: "Canonical URL",
+        description: "The preferred version of a page for SEO",
+        icon: "lucide:link",
+        default: "https://intersubjective.space/",
+      },
     },
   },
+  // Uncomment and configure social media fields if applicable
   // socials: group({
   //   title: "Socials",
   //   description: "Socials configuration",
