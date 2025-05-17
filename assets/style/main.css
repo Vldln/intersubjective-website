@@ -9,9 +9,9 @@
   --font-mono: "Geist Mono", sans-serif;
 
   --color-main: var(--ui-bg);
-  --color-secondary: var(--color-secondary);
-  --color-card: var(--color-card);
-  --color-card-hover: var(--color-card-hover);
+  --color-secondary: var(--bg-secondary);
+  --color-card: var(--bg-card);
+  --color-card-hover: var(--bg-card-hover);
   --color-primary: var(--font-primary);
   --color-muted: var(--font-muted);
   --color-inverted: var(--font-inverted);
@@ -23,20 +23,21 @@
 }
 
 html.dark {
-  --ui-bg: var(--color-neutral-950);
-  --bg-secondary: #282828;
-  --bg-card: #282828;
-  --bg-card-hover: #343434;
+  --ui-bg: #000000;             /* deep black background */
+  --bg-secondary: #0c1a24;      /* soft dark navy */
+  --bg-card: #133E60;           /* deep blue for cards */
+  --bg-card-hover: #1e4f78;     /* lighter hover */
 
-  --font-primary: #ededed;
-  --font-muted: #808080;
-  --font-inverted: #282828;
+  --font-primary: #4BA3DE;      /* bright sky blue for headings/CTA */
+  --font-muted: #88b8d8;        /* light desaturated blue-gray */
+  --font-inverted: #F0F4F8;     /* light tone for inverted text */
 
-  --border-primary: #2e2e2e;
-  --border-primary-hover: #3e3e3e;
-  --border-muted: #1c1822;
-  --font-placeholder: #707070;
+  --border-primary: #217DBB;    /* medium blue border */
+  --border-primary-hover: #4BA3DE;
+  --border-muted: #1e3449;
+  --font-placeholder: #5d7d99;  /* cool desaturated blue-gray */
 }
+
 
 html,
 body,
@@ -114,7 +115,7 @@ body,
   }
 
   a {
-    @apply text-purple-500 dark:text-purple-500 underline hover:text-purple-600;
+    @apply text-cyan-500 dark:text-cyan-500 underline hover:text-cyan-600;
   }
 
   pre {
@@ -130,11 +131,11 @@ body,
   }
 
   ul {
-    @apply mb-4 mt-4 pl-6 list-disc marker:text-purple-500 dark:marker:text-purple-600;
+    @apply mb-4 mt-4 pl-6 list-disc marker:text-cyan-500 dark:marker:text-cyan-600;
   }
 
   ol {
-    @apply mb-4 mt-4 pl-6 list-decimal marker:text-purple-500 dark:marker:text-purple-600;
+    @apply mb-4 mt-4 pl-6 list-decimal marker:text-cyan-500 dark:marker:text-cyan-600;
   }
   li {
     @apply mb-1;

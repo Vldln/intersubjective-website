@@ -52,7 +52,7 @@ const img = useImage();
     >
       <div class="flex flex-wrap gap-4 sm:gap-8 mb-8">
         <div
-          class="group relative flex w-full sm:w-auto flex-col gap-1 rounded-lg bg-purple-900/10 p-1"
+          class="group relative flex w-full sm:w-auto flex-col gap-1 rounded-lg bg-card/10 p-1"
         >
           <div
             class="flex h-56 justify-center overflow-hidden rounded-lg w-full"

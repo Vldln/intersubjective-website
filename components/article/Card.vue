@@ -23,7 +23,8 @@ defineProps({
         {{ title }}
       </h3>
       <div
-        class="text-sm flex items-center gap-1 group-hover:text-purple-600 transition-all duration-500"
+        class="text-sm flex items-center gap-1 group-hover:text-primary transition-all duration-500"
+
       >
         {{ $t("article.Read") }}
         <div

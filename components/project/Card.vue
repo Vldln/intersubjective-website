@@ -15,7 +15,7 @@ const img = useImage();
   <NuxtLink
     :aria-label="item.title + ' project link'"
     :to="item.link"
-    class="group relative flex cursor-pointer flex-col gap-1 rounded-lg bg-purple-900/10 p-1"
+    class="group relative flex cursor-pointer flex-col gap-1 rounded-lg bg-card/10 p-1"
   >
     <div class="flex h-70 justify-center overflow-hidden rounded-lg">
       <NuxtImg
@@ -28,7 +28,7 @@ const img = useImage();
       />
     </div>
     <div class="absolute bottom-0 flex w-full justify-center pl-2">
-      <div class="rounded-lg px-4 py-[5px] backdrop-blur-md bg-purple-900/30">
+      <div class="rounded-lg px-4 py-[5px] backdrop-blur-md bg-card/30">
         <div class="flex items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <div class="flex items-center gap-2">

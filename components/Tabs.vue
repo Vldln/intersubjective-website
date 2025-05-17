@@ -11,7 +11,7 @@ const ui = {
   indicator:
     'absolute top-[4px] duration-200 ease-out focus:outline-none bg-white dark:bg-neutral-900',
   trigger:
-    'rounded-none text-lg relative inline-flex cursor-pointer items-center justify-center flex-shrink-0 focus:outline-none transition-colors duration-200 ease-out border-purple-900/30 border-b-4'
+    'rounded-none text-lg relative inline-flex cursor-pointer items-center justify-center flex-shrink-0 focus:outline-none transition-colors duration-200 ease-out border-border-primary-dark border-b-4'
     + ' px-3 py-2 font-medium'
     + ' hover:bg-neutral-900/80'
     + ' data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white'
@@ -24,7 +24,7 @@ const ui = {
 <template>
   <div class="flex flex-col items-center justify-center space-y-8 w-full">
     <div class="flex flex-col items-center justify-center gap-2">
-      <h3 class="font-bold text-purple-shadow text-4xl">
+      <h3 class="font-bold text-primary-shadow text-4xl">
         <slot name="title" />
       </h3>
     </div>

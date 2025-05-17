@@ -105,7 +105,7 @@ onMounted(() => {
   const farCount = Math.round(totalParticles * 0.6);
   const midCount = Math.round(totalParticles * 0.3);
   const nearCount = totalParticles - farCount - midCount;
-  
+
   const basicSpeed = 0.3 * (isMobile.value ? 0.5: 1.0); //to adjust to lower fps
 
   tsParticles.load({
@@ -199,11 +199,11 @@ links: {
       class="fixed inset-0 z-[999] pointer-events-none"
     ></div>
     <div
-      class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900/20 to-purple-900/0 pointer-events-none"
+      class="font-geist bg-cover md:bg-center bg-no-repeat h-screen flex flex-col items-center justify-center bg-gradient-to-b from-card/20 to-card/0 pointer-events-none"
       data-animate
     >
-      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto" 
-      @click="toggleParticleLinks"  
+      <Logo class="mx-auto mb-8 size-18 md:size-30 pointer-events-auto"
+      @click="toggleParticleLinks"
       />
       <div
         class="mx-auto lg:max-w-3xl px-4 flex flex-col items-center pointer-events-auto"
@@ -220,12 +220,12 @@ links: {
         </h2>
 
         <ULink
-          class="w-fit rounded-md mt-4 text-xl bg-purple-900/30 text-white/90 hover:bg-purple-900/90 px-4 border-2 border-purple-900 py-2 flex group pointer-events-auto"
+          class="w-fit rounded-md mt-4 text-xl bg-card text-white/90 hover:bg-card-hover px-4 border-2 border-border-primary py-2 flex group pointer-events-auto"
           to="/about"
         >
           <slot name="hero_button" mdc-unwrap="p" />
           <div
-            class="flex text-xl ml-2 items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 group-hover:border-purple-900"
+            class="flex text-xl ml-2 items-center justify-center rounded-full border border-transparent p-1 backdrop-blur-md transition-all duration-500 group-hover:-rotate-45 hover:border-opacity-80 group-hover:border-border-primary"
           >
             <UIcon name="heroicons:arrow-right" class="size-4 text-white/90" />
           </div>
