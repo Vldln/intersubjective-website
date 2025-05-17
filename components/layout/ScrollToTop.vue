@@ -26,7 +26,7 @@ function scrollToTop() {
     >
       <UIcon
         name="heroicons-arrow-up"
-        class="z-20 size-6 text-purple-600/70"
+        class="z-20 size-6 text-primary/70"
       />
     </SpotlightButton>
   </div>

@@ -18,7 +18,7 @@ const localePath = useLocalePath()
       <SpotlightButton
         transparent
         :animate="false"
-        class="bg-purple-900/10 dark:bg-purple-900/10"
+        class="bg-card/10 dark:bg-card/10"
       >
         <nav
           class="z-10 flex h-[50px] justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4"

@@ -49,7 +49,7 @@ const img = useImage();
           :placeholder="page?.image"
           width="1536"
           :alt="page.title + ' team member image'"
-          class="h-40 w-40 aspect-square rounded-full object-cover mb-4 border-4 border-purple-500/30 dark:border-purple-900/50 border"
+          class="h-40 w-40 aspect-square rounded-full object-cover mb-4 border-4 border-border-faint dark:border-border-primary-dark"
           :src="page.image"
           :aria-label="page.title + ' team member image'"
         />
