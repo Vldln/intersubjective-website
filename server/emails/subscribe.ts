@@ -12,6 +12,14 @@ export default defineEventHandler(async (event: H3Event) => {
       return { error: 'Email is required.' }
     }
 
+    // Add the email to the "General" audience
+    await resend.contacts.create({
+      email: email,
+      audienceId: '3a997e73-3f45-423f-9308-0e71a3444b64',
+      unsubscribed: false
+    })
+
+    // Send the confirmation email
     await resend.emails.send({
       from: 'Intersubjective <newsletter@intersubjective.space>',
       to: [email],
@@ -26,10 +34,10 @@ export default defineEventHandler(async (event: H3Event) => {
       `,
     })
 
-    return { success: true, message: 'Subscription confirmation email sent.' }
+    return { success: true, message: 'Subscription confirmed and email sent.' }
   }
   catch (error) {
     console.error('Subscription error:', error)
-    return { error: 'Failed to send email. Please try again later.' }
+    return { error: 'Failed to process subscription. Please try again later.' }
   }
 })
